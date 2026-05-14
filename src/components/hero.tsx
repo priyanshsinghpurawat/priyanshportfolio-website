@@ -11,7 +11,7 @@ export function Hero() {
       <h1 className="font-display text-5xl sm:text-7xl leading-[1.05] tracking-tight">
         Priyansh Singh — <br />
         <span className="italic text-muted-foreground">full-stack developer</span> crafting <br />
-        web things from Jaipur.
+        thoughtful web things.
       </h1>
       <p className="mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
         BCA student at JECRC focused on the modern JavaScript stack —

@@ -3,6 +3,12 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    name: "Full Stack E-Commerce",
+    stack: "React · Node.js · Express · MongoDB · JWT",
+    desc: "A complete full-stack e-commerce platform with a React frontend, Node.js/Express backend, MongoDB database, JWT authentication, and payment integration. Built end-to-end with a focus on scalable architecture.",
+    status: "In Progress",
+  },
+  {
     name: "Aspect Ratio Calculator",
     stack: "HTML · CSS · JavaScript",
     desc: "A responsive single-page utility for calculating and converting screen resolutions and aspect ratios. Continuous deployment via Netlify + GitHub.",
@@ -34,19 +40,32 @@ export function Experience() {
               <button
                 key={proj.name}
                 onClick={() => setActive(i)}
-                className={`text-left text-sm px-3 py-2 rounded-md border-l-2 transition ${
+                className={`text-left text-sm px-3 py-2 rounded-md border-l-2 transition flex items-center gap-2 ${
                   active === i
                     ? "border-brand text-foreground bg-accent"
                     : "border-transparent text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {proj.name}
+                <span>{proj.name}</span>
+                {proj.status && (
+                  <span className="ml-auto font-mono text-[10px] uppercase tracking-wider text-brand">
+                    ● {proj.status}
+                  </span>
+                )}
               </button>
             ))}
           </div>
         </div>
         <div className="rounded-2xl border border-border bg-card p-8 min-h-[280px]">
-          <p className="font-mono text-xs text-brand">{p.stack}</p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="font-mono text-xs text-brand">{p.stack}</p>
+            {p.status && (
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-brand">
+                <span className="size-1.5 rounded-full bg-brand animate-pulse" />
+                {p.status}
+              </span>
+            )}
+          </div>
           <h3 className="mt-3 font-display text-2xl flex items-center gap-2">
             {p.name}
             <ArrowUpRight className="size-5 text-muted-foreground" />
