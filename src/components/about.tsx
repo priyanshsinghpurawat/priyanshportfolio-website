@@ -4,6 +4,7 @@ const skills = [
   { label: "Backend", items: ["Node.js", "Express.js"] },
   { label: "Databases", items: ["MongoDB", "MySQL"] },
   { label: "Tools", items: ["Git", "GitHub", "Netlify", "VS Code"] },
+  { label: "Core", items: ["DSA", "Full Stack Architecture"] },
 ];
 
 export function About() {
@@ -16,14 +17,16 @@ export function About() {
         </div>
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            I'm a <span className="text-foreground">BCA student at JECRC, Jaipur</span>,
-            specializing in Full Stack Development. I like turning rough ideas into
-            tangible, responsive web apps — and I care about the small details that
-            make software feel intentional.
+            I'm a <span className="text-foreground">Full Stack Developer</span> and{" "}
+            <span className="text-foreground">BCA student at JECRC, Jaipur</span>, specializing in
+            the <span className="text-foreground">MERN stack</span> with a focus on clean,
+            optimized code. I build responsive web applications end-to-end — from architectural
+            planning to deployment.
           </p>
           <p>
-            Outside of coursework I dig into Data Structures, ship side projects, and
-            collaborate on group builds focused on scalable web tooling.
+            I care about the small details that make software feel intentional, and I'm dedicated
+            to solving complex logic problems while delivering high-performance interfaces.
+            Outside coursework I dig into Data Structures and ship side projects.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6">
