@@ -1,0 +1,59 @@
+import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+
+const projects = [
+  {
+    name: "Aspect Ratio Calculator",
+    stack: "HTML · CSS · JavaScript",
+    desc: "A responsive single-page utility for calculating and converting screen resolutions and aspect ratios. Continuous deployment via Netlify + GitHub.",
+  },
+  {
+    name: "Notes Taking App",
+    stack: "HTML5 · CSS · JavaScript",
+    desc: "A clean vanilla-JS notes app — create, save, and delete notes with persistent local storage. Built with a focus on simplicity.",
+  },
+  {
+    name: "Exchange Rate App",
+    stack: "HTML5 · CSS · JavaScript",
+    desc: "A real-time currency converter focused on live data fetching and responsive web design principles.",
+  },
+];
+
+export function Experience() {
+  const [active, setActive] = useState(0);
+  const p = projects[active];
+
+  return (
+    <section id="experience" className="mx-auto max-w-5xl px-6 py-24 border-t border-border">
+      <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Selected work</p>
+          <h2 className="mt-3 font-display text-3xl">Things I've built.</h2>
+          <div className="mt-8 flex md:flex-col gap-1">
+            {projects.map((proj, i) => (
+              <button
+                key={proj.name}
+                onClick={() => setActive(i)}
+                className={`text-left text-sm px-3 py-2 rounded-md border-l-2 transition ${
+                  active === i
+                    ? "border-brand text-foreground bg-accent"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {proj.name}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-8 min-h-[280px]">
+          <p className="font-mono text-xs text-brand">{p.stack}</p>
+          <h3 className="mt-3 font-display text-2xl flex items-center gap-2">
+            {p.name}
+            <ArrowUpRight className="size-5 text-muted-foreground" />
+          </h3>
+          <p className="mt-4 text-muted-foreground leading-relaxed">{p.desc}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
