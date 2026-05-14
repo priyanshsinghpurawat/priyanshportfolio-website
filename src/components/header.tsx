@@ -14,8 +14,8 @@ export function Header() {
           <a href="#contact" className="hover:text-foreground transition">Contact</a>
         </nav>
         <div className="flex items-center gap-3 text-muted-foreground">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-foreground transition"><Github className="size-4" /></a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-foreground transition"><Linkedin className="size-4" /></a>
+          <a href="https://github.com/priyanshsinghpurawat" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-foreground transition"><Github className="size-4" /></a>
+          <a href="https://www.linkedin.com/in/priyansh-singh-purawat/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-foreground transition"><Linkedin className="size-4" /></a>
           <a href="mailto:priyanshsinghpurawatji@gmail.com" aria-label="Email" className="hover:text-foreground transition"><Mail className="size-4" /></a>
         </div>
       </div>

@@ -14,8 +14,8 @@ export function Footer() {
       <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} Priyansh Singh Purawat</p>
         <div className="flex gap-6">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">GitHub</a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">LinkedIn</a>
+          <a href="https://github.com/priyanshsinghpurawat" target="_blank" rel="noreferrer" className="hover:text-foreground transition">GitHub</a>
+          <a href="https://www.linkedin.com/in/priyansh-singh-purawat/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">LinkedIn</a>
           <a href="tel:+919460177215" className="hover:text-foreground transition">+91 94601 77215</a>
         </div>
       </div>
