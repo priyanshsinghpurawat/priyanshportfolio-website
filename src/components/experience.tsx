@@ -35,12 +35,12 @@ export function Experience() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Selected work</p>
           <h2 className="mt-3 font-display text-3xl">Things I've built.</h2>
-          <div className="mt-8 flex md:flex-col gap-1">
+          <div className="mt-8 flex md:flex-col gap-1 overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible">
             {projects.map((proj, i) => (
               <button
                 key={proj.name}
                 onClick={() => setActive(i)}
-                className={`text-left text-sm px-3 py-2 rounded-md border-l-2 transition flex items-center gap-2 ${
+                className={`text-left text-sm px-3 py-2 rounded-md border-l-2 transition flex items-center gap-2 whitespace-nowrap shrink-0 md:shrink ${
                   active === i
                     ? "border-brand text-foreground bg-accent"
                     : "border-transparent text-muted-foreground hover:text-foreground"
@@ -56,7 +56,7 @@ export function Experience() {
             ))}
           </div>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-8 min-h-[280px]">
+        <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 min-h-[280px]">
           <div className="flex items-center justify-between gap-4">
             <p className="font-mono text-xs text-brand">{p.stack}</p>
             {p.status && (
