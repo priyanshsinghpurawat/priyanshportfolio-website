@@ -54,10 +54,10 @@ export function Mern() {
             <circle className="v mix-blend-multiply dark:mix-blend-screen" cx="260" cy="220" r="100" fill="var(--mern-n)" />
 
             {/* labels */}
-            <text x="80" y="90" className="lbl" fill="var(--mern-m)">M</text>
-            <text x="305" y="90" className="lbl" fill="var(--mern-e)">E</text>
-            <text x="70" y="290" className="lbl" fill="var(--mern-r)">R</text>
-            <text x="310" y="290" className="lbl" fill="var(--mern-n)">N</text>
+            <text x="108" y="100" className="lbl" fill="var(--mern-m)">M</text>
+            <text x="268" y="100" className="lbl" fill="var(--mern-e)">E</text>
+            <text x="100" y="275" className="lbl" fill="var(--mern-r)">R</text>
+            <text x="275" y="275" className="lbl" fill="var(--mern-n)">N</text>
 
             {/* center label */}
             <text x="200" y="180" textAnchor="middle" className="sub" fill="var(--color-foreground)" style={{ fontSize: 11, letterSpacing: "0.3em" }}>

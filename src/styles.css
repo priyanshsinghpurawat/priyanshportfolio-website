@@ -86,16 +86,17 @@
   --ring: oklch(0.78 0.15 75);
   --brand: oklch(51.929% 0.17172 255.378);
   --brand-foreground: oklch(0.16 0.01 280);
-  --mern-m: #0366c8;
-  --mern-e: #0366c8;
-  --mern-r: #0366c8;
-  --mern-n: #0366c8;
+  --mern-m: #0284c7;
+  --mern-e: #0369a1;
+  --mern-r: #0ea5e9;
+  --mern-n: #0077b6;
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
   }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
