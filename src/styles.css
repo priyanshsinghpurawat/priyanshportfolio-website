@@ -80,7 +80,7 @@
   --border: oklch(0.28 0.01 280 / 60%);
   --input: oklch(0.28 0.01 280);
   --ring: oklch(0.78 0.15 75);
-  --brand: oklch(0.82 0.16 75);
+  --brand: oklch(0.52 0.172 255.42);
   --brand-foreground: oklch(0.16 0.01 280);
 }
 
