@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const skills = [
   { label: "Languages", items: ["JavaScript (ES6+)", "HTML5", "CSS3"] },
   { label: "Frontend", items: ["React", "Responsive UI", "DOM"] },
@@ -9,8 +11,14 @@ const skills = [
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-5xl px-6 py-24 border-t border-border">
-      <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+    <section id="about" className="mx-auto max-w-5xl px-6 py-24 border-t border-border overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="grid gap-12 md:grid-cols-[1fr_2fr]"
+      >
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">About</p>
           <h2 className="mt-3 font-display text-3xl">A bit about me.</h2>
@@ -40,7 +48,7 @@ export function About() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
