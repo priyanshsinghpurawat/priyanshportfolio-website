@@ -1,0 +1,2 @@
+"config": { "distDir": "dist/client" } },
+{ "src": "dist/server/server.js", "use": "@vercel/node" { "handle": "filesystem" }, { "src": "/.*", "dest": "/dist/server/server.js" }
