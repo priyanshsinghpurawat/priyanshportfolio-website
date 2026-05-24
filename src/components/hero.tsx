@@ -1,0 +1,39 @@
+import { LiveClock } from "./live-clock";
+import { ArrowUpRight } from "lucide-react";
+
+export function Hero() {
+  return (
+    <section className="mx-auto max-w-5xl px-6 pt-12 sm:pt-20 pb-16 sm:pb-24">
+      <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6 sm:mb-8">
+        <span className="size-1.5 rounded-full bg-brand" />
+        Available for work
+      </div>
+      <h1 className="font-display text-4xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight">
+        Priyansh Singh — <br />
+        <span className="italic text-muted-foreground">full-stack developer</span> crafting <br />
+        thoughtful web things.
+      </h1>
+      <p className="mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+        BCA student at JECRC focused on the modern JavaScript stack —
+        React, Node, and the messy beautiful glue between them. I build
+        responsive interfaces and ship end-to-end.
+      </p>
+      <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+        <a
+          href="#contact"
+          className="group inline-flex items-center gap-2 rounded-full bg-brand text-brand-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition"
+        >
+          Get in touch
+          <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </a>
+        <a
+          href="#experience"
+          className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm hover:bg-accent transition"
+        >
+          See my work
+        </a>
+        <div className="w-full sm:w-auto sm:ml-auto"><LiveClock /></div>
+      </div>
+    </section>
+  );
+}
