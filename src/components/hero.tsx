@@ -1,5 +1,5 @@
 import { LiveClock } from "./live-clock";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 
 export function Hero() {
   return (
@@ -31,6 +31,14 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm hover:bg-accent transition"
         >
           See my work
+        </a>
+        <a
+          href="/resume.pdf"
+          download
+          className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm hover:bg-accent transition"
+        >
+          <Download className="size-4" />
+          Resume
         </a>
         <div className="w-full sm:w-auto sm:ml-auto"><LiveClock /></div>
       </div>
