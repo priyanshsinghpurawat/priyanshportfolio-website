@@ -8,9 +8,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     tanstackStart({
-      server: {
-        preset: 'vercel',
-      }
+      target: 'vercel',
     }),
     react(),
     tailwindcss(),
