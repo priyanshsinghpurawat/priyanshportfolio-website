@@ -1,5 +1,5 @@
 import { LiveClock } from "./live-clock";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 
 export function Hero() {
   return (
