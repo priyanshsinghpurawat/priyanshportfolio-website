@@ -7,7 +7,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    tanstackStart({ target: "vercel" }),
+    tanstackStart({}),
     react(),
     tailwindcss(),
     tsconfigPaths(),
