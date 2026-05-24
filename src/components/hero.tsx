@@ -3,7 +3,7 @@ import { ArrowUpRight, Download } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="mx-auto max-w-5xl px-6 pt-12 sm:pt-20 pb-16 sm:pb-24">
+    <section className="mx-auto max-w-5xl px-6 pt-10 sm:pt-20 pb-16 sm:pb-24">
       <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6 sm:mb-8">
         <span className="size-1.5 rounded-full bg-brand" />
         Available for work
