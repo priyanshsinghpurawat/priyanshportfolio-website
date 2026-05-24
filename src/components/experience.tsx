@@ -39,7 +39,7 @@ export function Experience() {
   const p = projects[active];
 
   return (
-    <section id="experience" className="mx-auto max-w-5xl px-6 py-24 border-t border-border overflow-hidden">
+    <section id="experience" className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -71,22 +71,22 @@ export function Experience() {
             ))}
           </div>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 min-h-[280px] flex flex-col">
-          <div className="flex items-center justify-between gap-4">
-            <p className="font-mono text-xs text-brand">{p.stack}</p>
+        <div className="min-w-0 rounded-2xl border border-border bg-card p-5 sm:p-8 min-h-[280px] flex flex-col">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="font-mono text-xs text-brand break-words min-w-0">{p.stack}</p>
             {p.status && (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-brand">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-brand shrink-0">
                 <span className="size-1.5 rounded-full bg-brand animate-pulse" />
                 {p.status}
               </span>
             )}
           </div>
           
-          <a href={p.liveUrl !== "#" ? p.liveUrl : p.githubUrl} target="_blank" rel="noreferrer" className="group mt-3 inline-flex items-center gap-2 w-fit">
-            <h3 className="font-display text-2xl group-hover:text-brand transition-colors">
+          <a href={p.liveUrl !== "#" ? p.liveUrl : p.githubUrl} target="_blank" rel="noreferrer" className="group mt-3 inline-flex items-start gap-2 w-fit">
+            <h3 className="font-display text-xl sm:text-2xl group-hover:text-brand transition-colors break-words">
               {p.name}
             </h3>
-            <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-brand transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="size-5 mt-1 shrink-0 text-muted-foreground group-hover:text-brand transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           
           <p className="mt-4 text-muted-foreground leading-relaxed flex-grow">{p.desc}</p>
