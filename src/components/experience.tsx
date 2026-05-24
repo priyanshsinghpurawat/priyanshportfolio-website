@@ -47,7 +47,7 @@ export function Experience() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="grid gap-12 md:grid-cols-[1fr_2fr]"
       >
-        <div>
+        <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Selected work</p>
           <h2 className="mt-3 font-display text-3xl">Things I've built.</h2>
           <div className="mt-8 flex md:flex-col gap-1 overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible">
