@@ -92,8 +92,9 @@
   --mern-n: #0077b6;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 section[id] {
