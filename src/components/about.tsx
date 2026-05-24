@@ -11,7 +11,7 @@ const skills = [
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-5xl px-6 py-24 border-t border-border overflow-hidden">
+    <section id="about" className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

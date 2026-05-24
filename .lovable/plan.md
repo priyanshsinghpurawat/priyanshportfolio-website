@@ -1,31 +1,43 @@
-## Scope
-Implement three portfolio improvements:
-1. Mobile navigation (hamburger menu)
-2. Smooth scroll for anchor links
-3. Resume download CTA in hero
+## Goal
+Fix mobile layout issues — primarily the **Selected Work** card cutting off — and tighten spacing/alignment across all sections. No content rewrites yet (About / Contact / Resume come in 2 days per your note).
 
 ## Changes
 
-### 1. Mobile nav — `src/components/header.tsx`
-- Add a hamburger button (lucide `Menu` icon) visible only on `sm:hidden`.
-- Use the existing shadcn `Sheet` component (`src/components/ui/sheet.tsx`) as a slide-in drawer from the right.
-- Drawer contains the same 4 links (MERN, About, Work, Contact) stacked vertically, large tap targets.
-- Clicking a link closes the sheet (controlled `open` state) and lets the browser jump to the anchor.
-- Keep the existing desktop nav untouched (`hidden sm:flex`).
+### 1. `src/components/experience.tsx` — fix card overflow
+The right-side project card overflows on mobile because:
+- The header row (`stack` text + status pill) is forced onto one line with `justify-between`, and the long mono stack string (`React · Node.js · Express · MongoDB · JWT`) pushes the pill off-screen.
+- The project title (`text-2xl`) + arrow icon can wrap awkwardly.
 
-### 2. Smooth scroll — `src/styles.css`
-- Add `html { scroll-behavior: smooth; }`.
-- Add `scroll-margin-top: 4rem` on section anchors so the sticky header doesn't cover the heading.
+Fixes:
+- Header row: `flex-wrap gap-2` so the status pill drops below the stack on narrow screens.
+- Stack text: add `break-words` / smaller leading on mobile.
+- Title: `text-xl sm:text-2xl`, allow wrapping.
+- Card padding: `p-5 sm:p-8` (currently `p-6 sm:p-8`).
+- Section vertical padding: `py-16 sm:py-24` (currently `py-24` everywhere — too heavy on mobile).
+- Tabs list: keep horizontal scroll on mobile (already works), but add subtle right fade so it's clear there's more.
 
-### 3. Resume CTA — `src/components/hero.tsx`
-- Add a third button next to "Get in touch" / "See my work": **Download Resume** with `Download` icon.
-- Link to `/resume.pdf` with `download` attribute (you'll drop your PDF into `public/resume.pdf`).
-- Style: outline variant matching "See my work" so primary CTA stays singular.
+### 2. `src/components/mern.tsx`, `src/components/about.tsx`
+- Section padding `py-24` → `py-16 sm:py-24` for tighter mobile rhythm.
+- About skills grid: keep `grid-cols-2 sm:grid-cols-3` (fine), just verify gap.
 
-## Out of scope
-Brand color unification, project screenshots, SEO meta, avatar — separate passes.
+### 3. `src/components/hero.tsx`
+- Heading is `text-4xl` on mobile — fine, but reduce top padding `pt-12` → `pt-10`.
+- CTA row: the 3 buttons + LiveClock can crowd. Make LiveClock its own row on mobile (`w-full sm:w-auto sm:ml-auto` already does this — verify it renders cleanly).
 
-## After implementation
-You'll need to:
-- Add your CV file at `public/resume.pdf` (Lovable serves `public/` at site root).
-- Connect GitHub via the + menu so the changes push automatically.
+### 4. `src/components/header.tsx`
+- Quick check: ensure mobile sheet trigger sits flush with right edge, header has proper `px-4 sm:px-6`.
+
+### 5. Reminder note (no code)
+I'll add a TODO comment block to `.lovable/plan.md` listing the 2-day items so we don't lose them:
+- Update About section copy
+- Drop in new resume PDF at `/public/resume.pdf`
+- Expand Contact section: more details + feedback form + work images
+
+(I can't trigger a real time-based reminder, but the note will surface next session and I'll proactively bring it up.)
+
+## Out of scope (per your message)
+- About section rewrite
+- Contact section build-out + feedback form + work images
+- Resume PDF swap
+
+Want me to proceed with these mobile polish changes?
