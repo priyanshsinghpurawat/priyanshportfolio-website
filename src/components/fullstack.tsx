@@ -74,7 +74,7 @@ export function FullStack() {
               </motion.div>
             ))}
           </div>
-        </a>
+        </div>
       </motion.div>
     </section>
   );
