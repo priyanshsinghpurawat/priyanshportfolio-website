@@ -1,43 +1,70 @@
-## Goal
-Fix mobile layout issues — primarily the **Selected Work** card cutting off — and tighten spacing/alignment across all sections. No content rewrites yet (About / Contact / Resume come in 2 days per your note).
+# Make the site more AI-crawler-friendly
 
-## Changes
+Goal: improve how LLM crawlers (ChatGPT, Claude, Perplexity, Gemini, etc.) discover, parse, and cite your portfolio.
 
-### 1. `src/components/experience.tsx` — fix card overflow
-The right-side project card overflows on mobile because:
-- The header row (`stack` text + status pill) is forced onto one line with `justify-between`, and the long mono stack string (`React · Node.js · Express · MongoDB · JWT`) pushes the pill off-screen.
-- The project title (`text-2xl`) + arrow icon can wrap awkwardly.
+## 1. Fix the canonical domain
+`public/robots.txt` and `public/sitemap.xml` currently point to `https://https-priyanshportfolio-website-vercel-app.lovable.app` (broken — has "https-" baked into the host). Replace with your real production domain (Vercel URL or custom domain). Used in: robots `Sitemap:`, sitemap `<loc>`, canonical + og:url meta tags.
 
-Fixes:
-- Header row: `flex-wrap gap-2` so the status pill drops below the stack on narrow screens.
-- Stack text: add `break-words` / smaller leading on mobile.
-- Title: `text-xl sm:text-2xl`, allow wrapping.
-- Card padding: `p-5 sm:p-8` (currently `p-6 sm:p-8`).
-- Section vertical padding: `py-16 sm:py-24` (currently `py-24` everywhere — too heavy on mobile).
-- Tabs list: keep horizontal scroll on mobile (already works), but add subtle right fade so it's clear there's more.
+## 2. Per-route head metadata
+Today only `index.html` has title/description. Add `head()` in `src/routes/index.tsx` (and any future routes) with:
+- unique `title`, `description`
+- `og:title`, `og:description`, `og:url`, `og:type=website`
+- `<link rel="canonical">` on the leaf route
 
-### 2. `src/components/mern.tsx`, `src/components/about.tsx`
-- Section padding `py-24` → `py-16 sm:py-24` for tighter mobile rhythm.
-- About skills grid: keep `grid-cols-2 sm:grid-cols-3` (fine), just verify gap.
+## 3. JSON-LD structured data (biggest AI-citation win)
+Add `<script type="application/ld+json">` via route `head().scripts`:
+- **Person** schema (name, jobTitle, url, sameAs: GitHub/LinkedIn, email, alumniOf: JECRC University, knowsAbout: React/Node/MERN/TypeScript)
+- **WebSite** schema with `potentialAction` SearchAction
+- **BreadcrumbList** for navigation
+- Optional **CreativeWork**/**SoftwareApplication** entries per project in the "Things I've built" section
 
-### 3. `src/components/hero.tsx`
-- Heading is `text-4xl` on mobile — fine, but reduce top padding `pt-12` → `pt-10`.
-- CTA row: the 3 buttons + LiveClock can crowd. Make LiveClock its own row on mobile (`w-full sm:w-auto sm:ml-auto` already does this — verify it renders cleanly).
+## 4. Expand `public/llms.txt`
+Current file is minimal. Add sections:
+- `## Skills` — concrete tech list (React, Next, Node, Express, MongoDB, Postgres, Tailwind, TypeScript, REST, auth, deployment)
+- `## Projects` — each project name + 1-line description + live URL + repo URL
+- `## Experience` — roles, dates, summaries
+- `## Education` — JECRC University, BCA, dates
+- `## Optional` — blog/longer-form links if any
 
-### 4. `src/components/header.tsx`
-- Quick check: ensure mobile sheet trigger sits flush with right edge, header has proper `px-4 sm:px-6`.
+Also add a richer `public/llms-full.txt` with the full bio + project write-ups in plain markdown (the convention many crawlers now check).
 
-### 5. Reminder note (no code)
-I'll add a TODO comment block to `.lovable/plan.md` listing the 2-day items so we don't lose them:
-- Update About section copy
-- Drop in new resume PDF at `/public/resume.pdf`
-- Expand Contact section: more details + feedback form + work images
+## 5. Semantic HTML pass
+Audit `hero.tsx`, `fullstack.tsx`, `mern.tsx`, `about.tsx`, `experience.tsx`, `contact-form.tsx`, `footer.tsx`:
+- exactly one `<h1>` (hero), correct `<h2>`/`<h3>` order
+- wrap sections in `<section aria-labelledby="...">` with `id`s (`#about`, `#projects`, `#contact`)
+- `<nav>`, `<main>`, `<footer>` landmarks
+- `alt` text on every image; descriptive link text (no "click here")
 
-(I can't trigger a real time-based reminder, but the note will surface next session and I'll proactively bring it up.)
+## 6. Open Graph image
+Generate a branded 1200×630 OG image (name + role + accent) and wire it into `og:image` + `twitter:image`. Crawlers and link unfurlers both use it.
 
-## Out of scope (per your message)
-- About section rewrite
-- Contact section build-out + feedback form + work images
-- Resume PDF swap
+## 7. Sitemap completeness
+Once sections become routes (or if you keep them as anchors), list `/`, `/#about`, `/#projects`, `/#contact` — or better, split Projects/About into real routes (`/projects`, `/about`, `/contact`) so they get their own metadata and sitemap entries.
 
-Want me to proceed with these mobile polish changes?
+## 8. Robots.txt polish
+- Add `Allow: /` under each named bot block (already done — good)
+- Add `User-agent: Applebot-Extended`, `Bytespider`, `Amazonbot`, `Diffbot` (explicit allow)
+- Keep `Sitemap:` pointing at the fixed domain
+
+## 9. Performance / accessibility signals
+Crawlers weight fast, accessible pages:
+- preload key fonts (already partial)
+- add `<html lang="en">` (present), `prefers-reduced-motion` respected in marquee (done)
+- ensure color contrast in both themes
+- add `aria-label` to icon-only buttons (theme toggle, social links)
+
+## 10. RSS / contact discoverability
+- Add `<link rel="me" href="https://github.com/...">` and LinkedIn in `__root.tsx` head for verified identity
+- Add `mailto:` link with your address (crawlable)
+
+---
+
+### Recommended order to implement
+1. Fix domain in robots/sitemap/canonical (blocks everything else)
+2. Per-route head() + JSON-LD Person/WebSite
+3. Expand llms.txt + add llms-full.txt
+4. Semantic HTML audit + section ids
+5. OG image
+6. Bot list + identity links
+
+Tell me which of these you want to ship now (e.g. "all of 1–4" or "just 1, 2, 3") and I'll switch to build mode and execute.

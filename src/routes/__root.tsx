@@ -57,7 +57,38 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  head: () => ({
+    meta: [
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { property: "og:site_name", content: "Priyansh Singh Purawat" },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "author", content: "Priyansh Singh Purawat" },
+    ],
+    links: [
+      { rel: "me", href: "https://github.com/priyanshsinghpurawat" },
+      { rel: "me", href: "https://www.linkedin.com/in/priyansh-singh-purawat/" },
+      { rel: "me", href: "mailto:priyanshsinghpurawatji@gmail.com" },
+      { rel: "alternate", type: "text/plain", href: "/llms.txt", title: "LLM-readable summary" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Priyansh Singh Purawat — Portfolio",
+          url: SITE_URL,
+          inLanguage: "en",
+          author: { "@type": "Person", name: "Priyansh Singh Purawat" },
+        }),
+      },
+    ],
+  }),
   component: () => <Outlet />,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
