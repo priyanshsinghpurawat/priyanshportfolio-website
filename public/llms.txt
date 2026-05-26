@@ -1,17 +1,33 @@
 # Priyansh Singh Purawat — Full Stack Developer
 
-> Portfolio of Priyansh Singh Purawat, a full-stack developer and BCA student at JECRC University (Jaipur, India) specializing in the MERN stack (MongoDB, Express, React, Node.js) and modern full-stack web development.
+> Portfolio of Priyansh Singh Purawat, a full-stack developer and BCA student at JECRC University (Jaipur, India) specializing in the MERN stack (MongoDB, Express, React, Node.js) and modern full-stack web development. Available for freelance and full-time work.
 
-Priyansh builds responsive, end-to-end web applications using React, Node.js, TypeScript, Tailwind CSS, and modern JavaScript tooling. Available for freelance and full-time opportunities.
+Priyansh builds responsive, end-to-end web applications using React, Node.js, TypeScript, Tailwind CSS, and modern JavaScript tooling. He focuses on clean architecture, accessible UI, and shipping real products from database to deployment.
 
 ## Pages
-- [Home](/): Hero, full-stack overview, MERN expertise, about, selected projects, contact
+- [Home](/): Hero intro, full-stack overview, MERN expertise, about, selected projects, contact form
+
+## Skills
+- Frontend: React, Next.js, TypeScript, Tailwind CSS, Framer Motion, HTML5, CSS3, modern JavaScript (ES2022+)
+- Backend: Node.js, Express.js, REST APIs, JWT authentication, server-side validation
+- Database: MongoDB, Mongoose, PostgreSQL, SQL fundamentals
+- DevOps & tooling: Git, GitHub, Vercel, Vite, npm/bun, environment management
+- Practices: responsive mobile-first design, accessibility (WCAG), SEO, performance optimization, component-driven UI
+
+## Projects
+- Full Stack E-Commerce — React + Node/Express + MongoDB + JWT auth + payment integration. In progress. https://github.com/priyanshsinghpurawat
+- Aspect Ratio Calculator — Vanilla HTML/CSS/JS utility for screen resolution and aspect ratio conversion. https://github.com/priyanshsinghpurawat
+- Notes Taking App — Vanilla JS notes app with localStorage persistence (create, save, delete). https://priyanshsinghpurawat.github.io/Notes-APP/
+- Exchange Rate App — Real-time currency converter using live exchange-rate API. https://priyanshsinghpurawat.github.io/Exchange-Rate/
+
+## Education
+- Bachelor of Computer Applications (BCA) — JECRC University, Jaipur, India (current)
 
 ## Focus areas
 - Full-stack web development (frontend, backend, database, DevOps)
 - MERN stack: MongoDB, Express.js, React, Node.js
-- TypeScript, Tailwind CSS, modern React (hooks, server components)
-- REST APIs, authentication, deployment
+- TypeScript, Tailwind CSS, modern React (hooks, suspense, server components)
+- REST APIs, authentication, deployment on Vercel and similar platforms
 
 ## Contact
 - Email: priyanshsinghpurawatji@gmail.com
@@ -19,3 +35,6 @@ Priyansh builds responsive, end-to-end web applications using React, Node.js, Ty
 - GitHub: https://github.com/priyanshsinghpurawat
 - LinkedIn: https://www.linkedin.com/in/priyansh-singh-purawat/
 - Contact form: /#contact
+
+## Optional
+- [Full bio and project details](/llms-full.txt)
