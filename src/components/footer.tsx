@@ -1,3 +1,5 @@
+import { ContactForm } from "./contact-form";
+
 export function Footer() {
   return (
     <footer id="contact" className="mx-auto max-w-5xl px-6 py-24 border-t border-border">
@@ -11,6 +13,9 @@ export function Footer() {
           let's talk →
         </a>
       </h2>
+
+      <ContactForm />
+
       <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} Priyansh Singh Purawat</p>
         <div className="flex gap-6">

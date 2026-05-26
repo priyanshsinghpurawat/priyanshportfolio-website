@@ -1,0 +1,21 @@
+# Priyansh Singh Purawat — Full Stack Developer
+
+> Portfolio of Priyansh Singh Purawat, a full-stack developer and BCA student at JECRC University (Jaipur, India) specializing in the MERN stack (MongoDB, Express, React, Node.js) and modern full-stack web development.
+
+Priyansh builds responsive, end-to-end web applications using React, Node.js, TypeScript, Tailwind CSS, and modern JavaScript tooling. Available for freelance and full-time opportunities.
+
+## Pages
+- [Home](/): Hero, full-stack overview, MERN expertise, about, selected projects, contact
+
+## Focus areas
+- Full-stack web development (frontend, backend, database, DevOps)
+- MERN stack: MongoDB, Express.js, React, Node.js
+- TypeScript, Tailwind CSS, modern React (hooks, server components)
+- REST APIs, authentication, deployment
+
+## Contact
+- Email: priyanshsinghpurawatji@gmail.com
+- Phone: +91 94601 77215
+- GitHub: https://github.com/priyanshsinghpurawat
+- LinkedIn: https://www.linkedin.com/in/priyansh-singh-purawat/
+- Contact form: /#contact

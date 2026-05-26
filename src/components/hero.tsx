@@ -9,14 +9,17 @@ export function Hero() {
         Available for work
       </div>
       <h1 className="font-display text-4xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight">
-        Priyansh Singh — <br />
-        <span className="italic text-muted-foreground">full-stack developer</span> crafting <br />
+        <strong className="font-display font-bold">Priyansh Singh</strong> — <br />
+        <span className="italic text-muted-foreground"><strong className="font-semibold">full-stack developer</strong></span> crafting <br />
         thoughtful web things.
       </h1>
       <p className="mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-        BCA student at JECRC focused on the modern JavaScript stack —
-        React, Node, and the messy beautiful glue between them. I build
-        responsive interfaces and ship end-to-end.
+        <strong className="text-foreground font-semibold">BCA student at JECRC University</strong> focused on the
+        <strong className="text-foreground font-semibold"> modern JavaScript stack</strong> —
+        <strong className="text-foreground font-semibold"> React</strong>,
+        <strong className="text-foreground font-semibold"> Node.js</strong>, and the messy beautiful glue between them.
+        I build <strong className="text-foreground font-semibold">responsive interfaces</strong> and ship
+        <strong className="text-foreground font-semibold"> end-to-end MERN applications</strong>.
       </p>
       <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
         <a
