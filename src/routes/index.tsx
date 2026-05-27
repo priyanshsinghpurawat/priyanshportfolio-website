@@ -6,10 +6,10 @@ import { About } from "@/components/about";
 import { Mern } from "@/components/mern";
 import { Experience } from "@/components/experience";
 import { Footer } from "@/components/footer";
+import ogImage from "@/assets/og-image.jpg";
 
 const SITE_URL = "https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app";
-const OG_IMAGE =
-  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6097cd1-4090-43ca-a1cd-e12d7f26ac6c/id-preview-3a4b997b--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app-1779691765487.png";
+const OG_IMAGE = SITE_URL + ogImage;
 
 const TITLE = "Priyansh Singh Purawat — Full Stack Developer (MERN, React, Node.js)";
 const DESCRIPTION =
@@ -25,6 +25,9 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: SITE_URL + "/" },
       { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1216" },
+      { property: "og:image:height", content: "640" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: OG_IMAGE },
@@ -83,6 +86,19 @@ export const Route = createFileRoute("/")({
           areaServed: "Worldwide",
           serviceType: "Full Stack Web Development",
           provider: { "@type": "Person", name: "Priyansh Singh Purawat" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+            { "@type": "ListItem", position: 2, name: "About", item: SITE_URL + "/#about" },
+            { "@type": "ListItem", position: 3, name: "Projects", item: SITE_URL + "/#experience" },
+            { "@type": "ListItem", position: 4, name: "Contact", item: SITE_URL + "/#contact" },
+          ],
         }),
       },
     ],
