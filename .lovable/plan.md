@@ -1,70 +1,36 @@
-# Make the site more AI-crawler-friendly
+# Continue AI-crawler hardening (items 5–8)
 
-Goal: improve how LLM crawlers (ChatGPT, Claude, Perplexity, Gemini, etc.) discover, parse, and cite your portfolio.
+Items 1–4 are already live (domain, per-route head + JSON-LD, llms.txt, llms-full.txt). Next batch:
 
-## 1. Fix the canonical domain
-`public/robots.txt` and `public/sitemap.xml` currently point to `https://https-priyanshportfolio-website-vercel-app.lovable.app` (broken — has "https-" baked into the host). Replace with your real production domain (Vercel URL or custom domain). Used in: robots `Sitemap:`, sitemap `<loc>`, canonical + og:url meta tags.
-
-## 2. Per-route head metadata
-Today only `index.html` has title/description. Add `head()` in `src/routes/index.tsx` (and any future routes) with:
-- unique `title`, `description`
-- `og:title`, `og:description`, `og:url`, `og:type=website`
-- `<link rel="canonical">` on the leaf route
-
-## 3. JSON-LD structured data (biggest AI-citation win)
-Add `<script type="application/ld+json">` via route `head().scripts`:
-- **Person** schema (name, jobTitle, url, sameAs: GitHub/LinkedIn, email, alumniOf: JECRC University, knowsAbout: React/Node/MERN/TypeScript)
-- **WebSite** schema with `potentialAction` SearchAction
-- **BreadcrumbList** for navigation
-- Optional **CreativeWork**/**SoftwareApplication** entries per project in the "Things I've built" section
-
-## 4. Expand `public/llms.txt`
-Current file is minimal. Add sections:
-- `## Skills` — concrete tech list (React, Next, Node, Express, MongoDB, Postgres, Tailwind, TypeScript, REST, auth, deployment)
-- `## Projects` — each project name + 1-line description + live URL + repo URL
-- `## Experience` — roles, dates, summaries
-- `## Education` — JECRC University, BCA, dates
-- `## Optional` — blog/longer-form links if any
-
-Also add a richer `public/llms-full.txt` with the full bio + project write-ups in plain markdown (the convention many crawlers now check).
-
-## 5. Semantic HTML pass
-Audit `hero.tsx`, `fullstack.tsx`, `mern.tsx`, `about.tsx`, `experience.tsx`, `contact-form.tsx`, `footer.tsx`:
-- exactly one `<h1>` (hero), correct `<h2>`/`<h3>` order
-- wrap sections in `<section aria-labelledby="...">` with `id`s (`#about`, `#projects`, `#contact`)
-- `<nav>`, `<main>`, `<footer>` landmarks
-- `alt` text on every image; descriptive link text (no "click here")
+## 5. Semantic HTML audit
+Pass over each section component to give crawlers a clean outline:
+- `hero.tsx` — ensure single `<h1>`; wrap in `<section id="home" aria-labelledby="hero-title">`.
+- `fullstack.tsx`, `mern.tsx`, `experience.tsx`, `about.tsx`, `contact-form.tsx` — convert wrapping `<div>`s to `<section aria-labelledby="…">` with stable ids (`#fullstack`, `#projects`, `#experience`, `#about`, `#contact`). Enforce `<h2>` → `<h3>` order.
+- `header.tsx` — wrap nav in `<nav aria-label="Primary">`, add `aria-label` to icon-only buttons (theme toggle, socials).
+- `footer.tsx` — confirm `<footer>` landmark and descriptive link text.
+- `routes/index.tsx` — wrap page body in `<main>`.
+- Add `alt` text to any `<img>` missing one; descriptive (no "image of").
 
 ## 6. Open Graph image
-Generate a branded 1200×630 OG image (name + role + accent) and wire it into `og:image` + `twitter:image`. Crawlers and link unfurlers both use it.
+- Generate a branded 1200×630 PNG via imagegen (premium tier for legible text): name "Priyansh Singh", role "Full-stack Developer · MERN", dark gradient matching site theme, subtle accent.
+- Save to `src/assets/og-image.png` and import in `src/routes/__root.tsx` + `src/routes/index.tsx` so the URL is hashed/served by Vite. Wire into `og:image`, `og:image:width=1200`, `og:image:height=630`, `twitter:image`.
 
-## 7. Sitemap completeness
-Once sections become routes (or if you keep them as anchors), list `/`, `/#about`, `/#projects`, `/#contact` — or better, split Projects/About into real routes (`/projects`, `/about`, `/contact`) so they get their own metadata and sitemap entries.
+## 7. Route split (Projects / About / Contact)
+Promote in-page anchors into real routes so each gets its own metadata + sitemap entry:
+- `src/routes/projects.tsx` — renders `<Mern />` + project content + own `head()`.
+- `src/routes/about.tsx` — renders `<About />` + `<Experience />` + `<Fullstack />` + own `head()`.
+- `src/routes/contact.tsx` — renders `<ContactForm />` + footer CTA + own `head()`.
+- Update `header.tsx` nav `<Link to="/projects">` etc. (keep hash anchors as fallback on `/`).
+- Update `public/sitemap.xml` with `/projects`, `/about`, `/contact`.
+- Each leaf route gets canonical, og:url, JSON-LD `BreadcrumbList`.
 
-## 8. Robots.txt polish
-- Add `Allow: /` under each named bot block (already done — good)
-- Add `User-agent: Applebot-Extended`, `Bytespider`, `Amazonbot`, `Diffbot` (explicit allow)
-- Keep `Sitemap:` pointing at the fixed domain
+## 8. Robots polish
+Already mostly done — verify `Applebot-Extended`, `Bytespider`, `Diffbot`, `Amazonbot`, `meta-externalagent`, `cohere-ai`, `YouBot`, `OAI-SearchBot` blocks all present and allowed.
 
-## 9. Performance / accessibility signals
-Crawlers weight fast, accessible pages:
-- preload key fonts (already partial)
-- add `<html lang="en">` (present), `prefers-reduced-motion` respected in marquee (done)
-- ensure color contrast in both themes
-- add `aria-label` to icon-only buttons (theme toggle, social links)
+## Technical notes
+- Canonical only on leaf routes (TanStack concatenates `links`).
+- og:image only on leaf routes — never `__root.tsx` — to avoid overriding per-page images.
+- Keep one `<h1>` per route after split (the hero `<h1>` only renders on `/`; projects/about/contact get their own `<h1>`).
+- No business-logic changes; all edits are markup + metadata.
 
-## 10. RSS / contact discoverability
-- Add `<link rel="me" href="https://github.com/...">` and LinkedIn in `__root.tsx` head for verified identity
-- Add `mailto:` link with your address (crawlable)
-
----
-
-### Recommended order to implement
-1. Fix domain in robots/sitemap/canonical (blocks everything else)
-2. Per-route head() + JSON-LD Person/WebSite
-3. Expand llms.txt + add llms-full.txt
-4. Semantic HTML audit + section ids
-5. OG image
-6. Bot list + identity links
-
-Tell me which of these you want to ship now (e.g. "all of 1–4" or "just 1, 2, 3") and I'll switch to build mode and execute.
+Order: 8 → 5 → 6 → 7 (cheapest first, route split last since it touches nav + sitemap).
