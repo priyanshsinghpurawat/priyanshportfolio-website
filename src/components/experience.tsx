@@ -78,7 +78,7 @@ function ProjectCard({ p }: { p: (typeof projects)[number] }) {
 
 export function Experience() {
   return (
-    <section id="experience" className="py-16 sm:py-24 border-t border-border overflow-hidden">
+    <section id="experience" aria-labelledby="experience-title" className="py-16 sm:py-24 border-t border-border overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export function Experience() {
         className="mx-auto max-w-5xl px-6"
       >
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Selected work</p>
-        <h2 className="mt-3 font-display text-3xl">Things I've built.</h2>
+        <h2 id="experience-title" className="mt-3 font-display text-3xl">Things I've built.</h2>
         <p className="mt-2 text-sm text-muted-foreground">Hover or touch &amp; hold to pause.</p>
       </motion.div>
 

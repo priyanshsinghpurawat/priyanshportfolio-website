@@ -2,9 +2,9 @@ import { ContactForm } from "./contact-form";
 
 export function Footer() {
   return (
-    <footer id="contact" className="mx-auto max-w-5xl px-6 py-24 border-t border-border">
+    <footer id="contact" aria-labelledby="contact-title" className="mx-auto max-w-5xl px-6 py-24 border-t border-border">
       <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contact</p>
-      <h2 className="mt-3 font-display text-3xl sm:text-5xl md:text-6xl leading-tight break-words">
+      <h2 id="contact-title" className="mt-3 font-display text-3xl sm:text-5xl md:text-6xl leading-tight break-words">
         Got an idea? <br />
         <a
           href="mailto:priyanshsinghpurawatji@gmail.com"

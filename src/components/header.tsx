@@ -20,7 +20,7 @@ export function Header() {
         <Link to="/" className="font-display text-xl tracking-tight shrink-0">
           priyansh<span className="text-brand">.</span>
         </Link>
-        <nav className="hidden sm:flex items-center gap-6 text-sm text-muted-foreground">
+        <nav aria-label="Primary" className="hidden sm:flex items-center gap-6 text-sm text-muted-foreground">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-foreground transition">{l.label}</a>
           ))}

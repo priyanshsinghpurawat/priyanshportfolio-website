@@ -9,7 +9,7 @@ const stack = [
 
 export function Mern() {
   return (
-    <section id="mern" className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden">
+    <section id="mern" aria-labelledby="mern-title" className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -19,7 +19,7 @@ export function Mern() {
       >
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">The Stack</p>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+          <h2 id="mern-title" className="mt-3 font-display text-3xl sm:text-4xl">
             About <span className="italic text-brand">MERN</span>.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">

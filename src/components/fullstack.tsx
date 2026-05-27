@@ -25,7 +25,7 @@ const layers = [
 
 export function FullStack() {
   return (
-    <section id="fullstack" className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden">
+    <section id="fullstack" aria-labelledby="fullstack-title" className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export function FullStack() {
         <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Overview</p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+            <h2 id="fullstack-title" className="mt-3 font-display text-3xl sm:text-4xl">
               Full Stack <span className="italic text-brand">Development</span>.
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">

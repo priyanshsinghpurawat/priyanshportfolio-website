@@ -3,12 +3,12 @@ import { ArrowUpRight, Download } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="mx-auto max-w-5xl px-6 pt-10 sm:pt-20 pb-16 sm:pb-24">
+    <section id="home" aria-labelledby="hero-title" className="mx-auto max-w-5xl px-6 pt-10 sm:pt-20 pb-16 sm:pb-24">
       <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6 sm:mb-8">
-        <span className="size-1.5 rounded-full bg-brand" />
+        <span className="size-1.5 rounded-full bg-brand" aria-hidden="true" />
         Available for work
       </div>
-      <h1 className="font-display text-4xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight">
+      <h1 id="hero-title" className="font-display text-4xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight">
         <strong className="font-display font-bold">Priyansh Singh</strong> — <br />
         <span className="italic text-muted-foreground"><strong className="font-semibold">full-stack developer</strong></span> crafting <br />
         thoughtful web things.
