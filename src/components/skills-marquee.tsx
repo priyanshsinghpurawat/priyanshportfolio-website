@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import {
   SiReact, SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiMongoose,
   SiTailwindcss, SiFramer, SiJavascript, SiTypescript, SiGit, SiGithub,
-  SiNetlify, SiPostman, SiHtml5, SiCss3,
+  SiNetlify, SiPostman, SiHtml5, SiCss,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 
@@ -20,7 +20,7 @@ const skills: Skill[] = [
   { name: "Tailwind", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Framer Motion", Icon: SiFramer, color: "#E94BB1" },
   { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS3", Icon: SiCss3, color: "#1572B6" },
+  { name: "CSS3", Icon: SiCss, color: "#1572B6" },
   { name: "Git", Icon: SiGit, color: "#F05032" },
   { name: "GitHub", Icon: SiGithub, color: "currentColor" },
   { name: "Postman", Icon: SiPostman, color: "#FF6C37" },
