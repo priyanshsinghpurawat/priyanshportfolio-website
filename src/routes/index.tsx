@@ -113,9 +113,9 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <SkillsMarquee />
         <FullStack />
         <Mern />
-        <SkillsMarquee />
         <About />
         <Experience />
       </main>
