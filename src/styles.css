@@ -162,6 +162,15 @@ section[id] {
   scroll-margin-top: 4rem;
 }
 
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="marquee-x"] { animation: none !important; }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
