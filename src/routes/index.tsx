@@ -4,6 +4,7 @@ import { Hero } from "@/components/hero";
 import { FullStack } from "@/components/fullstack";
 import { About } from "@/components/about";
 import { Mern } from "@/components/mern";
+import { SkillsMarquee } from "@/components/skills-marquee";
 import { Experience } from "@/components/experience";
 import { Footer } from "@/components/footer";
 import ogImage from "@/assets/og-image.jpg";
@@ -114,6 +115,7 @@ function Index() {
         <Hero />
         <FullStack />
         <Mern />
+        <SkillsMarquee />
         <About />
         <Experience />
       </main>

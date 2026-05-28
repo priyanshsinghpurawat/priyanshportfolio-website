@@ -5,7 +5,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "./ui/sheet";
 
 const navLinks = [
-  { href: "#mern", label: "MERN" },
+  { href: "#skills", label: "Skills" },
   { href: "#about", label: "About" },
   { href: "#experience", label: "Work" },
   { href: "#contact", label: "Contact" },
