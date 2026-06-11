@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { Reveal } from "./reveal";
 
 const layers = [
   {
@@ -25,14 +25,13 @@ const layers = [
 
 export function FullStack() {
   return (
-    <section id="fullstack" aria-labelledby="fullstack-title" className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+    <section
+      id="fullstack"
+      aria-labelledby="fullstack-title"
+      className="mx-auto max-w-5xl px-6 py-10 sm:py-16 border-t border-border"
+    >
+      <Reveal>
+        <div className="grid gap-10 md:grid-cols-[1fr_2fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Overview</p>
             <h2 id="fullstack-title" className="mt-3 font-display text-3xl sm:text-4xl">
@@ -46,36 +45,31 @@ export function FullStack() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {layers.map((layer, i) => (
-              <motion.div
-                key={layer.title}
-                initial={{ opacity: 1, y: 0 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="group rounded-xl border border-border bg-card p-5 hover:border-brand/40 transition-colors"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand/10 text-brand font-display text-sm font-semibold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-lg text-foreground">{layer.title}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{layer.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {layer.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
-                    >
-                      {item}
+              <Reveal key={layer.title} delay={i * 0.08}>
+                <div className="group rounded-xl border border-border bg-card p-5 hover:border-brand/40 transition-colors h-full">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand/10 text-brand font-display text-sm font-semibold">
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                  ))}
+                    <h3 className="font-display text-lg text-foreground">{layer.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{layer.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {layer.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }

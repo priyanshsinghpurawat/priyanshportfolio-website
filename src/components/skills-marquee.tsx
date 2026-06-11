@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
 import {
   SiReact, SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiMongoose,
   SiTailwindcss, SiFramer, SiJavascript, SiTypescript, SiGit, SiGithub,
   SiNetlify, SiPostman, SiHtml5, SiCss,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
+import { Reveal } from "./reveal";
 
 type Skill = { name: string; Icon: IconType; color: string };
 
@@ -27,33 +27,28 @@ const skills: Skill[] = [
   { name: "Netlify", Icon: SiNetlify, color: "#00C7B7" },
 ];
 
-function SkillCard({ Icon, name, color }: Skill) {
+function SkillChip({ Icon, name, color }: Skill) {
   return (
-    <div className="group shrink-0 mx-3 flex flex-col items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 py-4 min-w-[7rem] transition-all duration-300 hover:border-brand/50 hover:shadow-[0_0_20px_-5px_var(--brand)] hover:-translate-y-1">
+    <div className="group shrink-0 mx-2 flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2 transition-all duration-300 hover:border-brand/50 hover:shadow-[0_0_16px_-4px_var(--brand)]">
       <Icon
-        className="size-8 transition-transform duration-300 group-hover:scale-110"
+        className="size-5 transition-transform duration-300 group-hover:scale-110"
         style={{ color }}
         aria-hidden="true"
       />
-      <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-        {name}
-      </span>
+      <span className="text-xs font-medium text-foreground whitespace-nowrap">{name}</span>
     </div>
   );
 }
 
-function Track({ reverse = false, duration = 40 }: { reverse?: boolean; duration?: number }) {
+function Track() {
   const items = [...skills, ...skills];
   return (
     <div
       className="flex w-max"
-      style={{
-        animation: `marquee-x ${duration}s linear infinite`,
-        animationDirection: reverse ? "reverse" : "normal",
-      }}
+      style={{ animation: `marquee-x 50s linear infinite` }}
     >
       {items.map((s, i) => (
-        <SkillCard key={`${s.name}-${i}`} {...s} />
+        <SkillChip key={`${s.name}-${i}`} {...s} />
       ))}
     </div>
   );
@@ -64,35 +59,26 @@ export function SkillsMarquee() {
     <section
       id="skills"
       aria-labelledby="skills-title"
-      className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-border overflow-hidden"
+      className="mx-auto max-w-5xl px-6 py-10 sm:py-16 border-t border-border overflow-hidden"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <div className="text-center mb-10">
+      <Reveal>
+        <div className="text-center mb-8">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Toolbox</p>
           <h2 id="skills-title" className="mt-3 font-display text-3xl sm:text-4xl">
             Skills & <span className="italic text-brand">Technologies</span>.
           </h2>
-          <p className="mt-4 text-sm text-muted-foreground max-w-xl mx-auto">
-            A snapshot of the languages, frameworks, and tools I use day to day.
-          </p>
         </div>
+      </Reveal>
 
-        <div
-          className="relative space-y-4"
-          style={{
-            maskImage: "linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent)",
-            WebkitMaskImage: "linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent)",
-          }}
-        >
-          <Track duration={40} />
-          <Track duration={55} reverse />
-        </div>
-      </motion.div>
+      <div
+        className="relative"
+        style={{
+          maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+          WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+        }}
+      >
+        <Track />
+      </div>
     </section>
   );
 }
