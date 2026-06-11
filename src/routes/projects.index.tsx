@@ -11,7 +11,7 @@ const TITLE = "Projects — Priyansh Singh Purawat";
 const DESCRIPTION =
   "Selected full-stack projects by Priyansh Singh Purawat — MERN apps, utilities, and shipped side projects with case-study write-ups.";
 
-export const Route = createFileRoute("/projects")({
+export const Route = createFileRoute("/projects/")({
   head: () => ({
     meta: [
       { title: TITLE },

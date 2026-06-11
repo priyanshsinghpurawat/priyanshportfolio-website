@@ -11,7 +11,7 @@ const TITLE = "Writing — Priyansh Singh Purawat";
 const DESCRIPTION =
   "Notes on full-stack development, the MERN journey, and lessons learned from shipping side projects as a BCA student.";
 
-export const Route = createFileRoute("/writing")({
+export const Route = createFileRoute("/writing/")({
   head: () => ({
     meta: [
       { title: TITLE },

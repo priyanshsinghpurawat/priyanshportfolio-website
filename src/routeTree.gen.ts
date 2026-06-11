@@ -9,25 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WritingRouteImport } from './routes/writing'
-import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WritingIndexRouteImport } from './routes/writing.index'
+import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as WritingSlugRouteImport } from './routes/writing.$slug'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 
-const WritingRoute = WritingRouteImport.update({
-  id: '/writing',
-  path: '/writing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WritingIndexRoute = WritingIndexRouteImport.update({
+  id: '/writing/',
+  path: '/writing/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WritingSlugRoute = WritingSlugRouteImport.update({
@@ -43,72 +43,72 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/projects': typeof ProjectsRouteWithChildren
-  '/writing': typeof WritingRouteWithChildren
   '/projects/$slug': typeof ProjectsSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
+  '/writing/': typeof WritingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/projects': typeof ProjectsRouteWithChildren
-  '/writing': typeof WritingRouteWithChildren
   '/projects/$slug': typeof ProjectsSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/projects': typeof ProjectsIndexRoute
+  '/writing': typeof WritingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/projects': typeof ProjectsRouteWithChildren
-  '/writing': typeof WritingRouteWithChildren
   '/projects/$slug': typeof ProjectsSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
+  '/writing/': typeof WritingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/projects'
-    | '/writing'
     | '/projects/$slug'
     | '/writing/$slug'
+    | '/projects/'
+    | '/writing/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects' | '/writing' | '/projects/$slug' | '/writing/$slug'
+  to: '/' | '/projects/$slug' | '/writing/$slug' | '/projects' | '/writing'
   id:
     | '__root__'
     | '/'
-    | '/projects'
-    | '/writing'
     | '/projects/$slug'
     | '/writing/$slug'
+    | '/projects/'
+    | '/writing/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ProjectsRoute: typeof ProjectsRouteWithChildren
-  WritingRoute: typeof WritingRouteWithChildren
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
+  WritingIndexRoute: typeof WritingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/writing': {
-      id: '/writing'
-      path: '/writing'
-      fullPath: '/writing'
-      preLoaderRoute: typeof WritingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/writing/': {
+      id: '/writing/'
+      path: '/writing'
+      fullPath: '/writing/'
+      preLoaderRoute: typeof WritingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/writing/$slug': {
@@ -128,33 +128,10 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface ProjectsRouteChildren {
-  ProjectsSlugRoute: typeof ProjectsSlugRoute
-}
-
-const ProjectsRouteChildren: ProjectsRouteChildren = {
-  ProjectsSlugRoute: ProjectsSlugRoute,
-}
-
-const ProjectsRouteWithChildren = ProjectsRoute._addFileChildren(
-  ProjectsRouteChildren,
-)
-
-interface WritingRouteChildren {
-  WritingSlugRoute: typeof WritingSlugRoute
-}
-
-const WritingRouteChildren: WritingRouteChildren = {
-  WritingSlugRoute: WritingSlugRoute,
-}
-
-const WritingRouteWithChildren =
-  WritingRoute._addFileChildren(WritingRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ProjectsRoute: ProjectsRouteWithChildren,
-  WritingRoute: WritingRouteWithChildren,
+  ProjectsIndexRoute: ProjectsIndexRoute,
+  WritingIndexRoute: WritingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
