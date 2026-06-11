@@ -4,12 +4,36 @@ import { Github, Linkedin, Mail, Menu } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "./ui/sheet";
 
-const navLinks = [
-  { href: "#skills", label: "Skills" },
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Work" },
-  { href: "#contact", label: "Contact" },
+type NavLink =
+  | { kind: "route"; to: "/" | "/projects" | "/writing"; label: string }
+  | { kind: "hash"; href: string; label: string };
+
+const navLinks: NavLink[] = [
+  { kind: "route", to: "/projects", label: "Projects" },
+  { kind: "route", to: "/writing", label: "Writing" },
+  { kind: "hash", href: "/#about", label: "About" },
+  { kind: "hash", href: "/#contact", label: "Contact" },
 ];
+
+function NavItem({ link, onClick, className }: { link: NavLink; onClick?: () => void; className?: string }) {
+  if (link.kind === "route") {
+    return (
+      <Link
+        to={link.to}
+        onClick={onClick}
+        className={className}
+        activeProps={{ className: "text-foreground" }}
+      >
+        {link.label}
+      </Link>
+    );
+  }
+  return (
+    <a href={link.href} onClick={onClick} className={className}>
+      {link.label}
+    </a>
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -21,8 +45,12 @@ export function Header() {
           priyansh<span className="text-brand">.</span>
         </Link>
         <nav aria-label="Primary" className="hidden sm:flex items-center gap-6 text-sm text-muted-foreground">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-foreground transition">{l.label}</a>
+          {navLinks.map((l, i) => (
+            <NavItem
+              key={i}
+              link={l}
+              className="hover:text-foreground transition"
+            />
           ))}
         </nav>
         <div className="flex items-center gap-2 sm:gap-3 text-muted-foreground">
@@ -45,15 +73,13 @@ export function Header() {
                 <SheetTitle className="font-display text-lg">Menu</SheetTitle>
               </SheetHeader>
               <nav className="mt-6 flex flex-col gap-1 px-2">
-                {navLinks.map((l) => (
-                  <a
-                    key={l.href}
-                    href={l.href}
+                {navLinks.map((l, i) => (
+                  <NavItem
+                    key={i}
+                    link={l}
                     onClick={() => setOpen(false)}
                     className="rounded-md px-3 py-3 text-base text-foreground hover:bg-accent transition"
-                  >
-                    {l.label}
-                  </a>
+                  />
                 ))}
               </nav>
             </SheetContent>

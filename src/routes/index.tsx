@@ -3,10 +3,11 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { FullStack } from "@/components/fullstack";
 import { About } from "@/components/about";
-import { Mern } from "@/components/mern";
 import { SkillsMarquee } from "@/components/skills-marquee";
 import { Experience } from "@/components/experience";
+import { Testimonials } from "@/components/testimonials";
 import { Footer } from "@/components/footer";
+import { ScrollProgress } from "@/components/scroll-progress";
 import ogImage from "@/assets/og-image.jpg";
 
 const SITE_URL = "https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app";
@@ -77,31 +78,6 @@ export const Route = createFileRoute("/")({
           ],
         }),
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          name: "Priyansh Singh Purawat — Full Stack Development",
-          url: SITE_URL,
-          areaServed: "Worldwide",
-          serviceType: "Full Stack Web Development",
-          provider: { "@type": "Person", name: "Priyansh Singh Purawat" },
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
-            { "@type": "ListItem", position: 2, name: "About", item: SITE_URL + "/#about" },
-            { "@type": "ListItem", position: 3, name: "Projects", item: SITE_URL + "/#experience" },
-            { "@type": "ListItem", position: 4, name: "Contact", item: SITE_URL + "/#contact" },
-          ],
-        }),
-      },
     ],
   }),
   component: Index,
@@ -110,14 +86,15 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <ScrollProgress />
       <Header />
       <main>
         <Hero />
         <SkillsMarquee />
         <FullStack />
-        <Mern />
         <About />
         <Experience />
+        <Testimonials />
       </main>
       <Footer />
     </div>
