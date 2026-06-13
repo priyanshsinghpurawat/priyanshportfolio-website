@@ -1,12 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/reveal";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { getProject, projects } from "@/data/projects";
 
-const SITE_URL = "https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app";
+import { SITE_URL } from "@/lib/constants";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -83,8 +84,12 @@ function ProjectDetail() {
     <div className="min-h-screen bg-background text-foreground">
       <ScrollProgress />
       <Header />
-      <main>
-        <article className="mx-auto max-w-3xl px-6 py-10 sm:py-16">
+      <motion.main
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <article className="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-16">
           <Link
             to="/projects"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand transition mb-8"
@@ -156,9 +161,18 @@ function ProjectDetail() {
               </div>
               <div className="rounded-xl border border-border bg-card p-5">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                  Key metric
+                  Key Highlights & Metrics
                 </p>
-                <p className="text-sm font-mono text-brand">{p.metric}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {p.metric.split("·").map((m, idx) => (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center rounded-lg border border-brand/20 bg-brand/5 px-2.5 py-1 text-xs font-mono text-brand"
+                    >
+                      {m.trim()}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>
@@ -210,7 +224,7 @@ function ProjectDetail() {
             </Link>
           </Reveal>
         </article>
-      </main>
+      </motion.main>
       <Footer />
     </div>
   );

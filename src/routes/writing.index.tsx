@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/reveal";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { posts } from "@/data/writing";
 
-const SITE_URL = "https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app";
+import { SITE_URL } from "@/lib/constants";
 const TITLE = "Writing — Priyansh Singh Purawat";
 const DESCRIPTION =
   "Notes on full-stack development, the MERN journey, and lessons learned from shipping side projects as a BCA student.";
@@ -30,7 +31,12 @@ function WritingPage() {
     <div className="min-h-screen bg-background text-foreground">
       <ScrollProgress />
       <Header />
-      <main className="mx-auto max-w-3xl px-6 py-12 sm:py-20">
+      <motion.main
+        className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-20"
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Writing</p>
           <h1 className="mt-3 font-display text-4xl sm:text-5xl tracking-tight">
@@ -69,7 +75,7 @@ function WritingPage() {
             </Reveal>
           ))}
         </ul>
-      </main>
+      </motion.main>
       <Footer />
     </div>
   );

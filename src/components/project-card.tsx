@@ -7,6 +7,7 @@ export function ProjectCard({ p, priority = false }: { p: Project; priority?: bo
     <Link
       to="/projects/$slug"
       params={{ slug: p.slug }}
+      data-cursor="view"
       className="group block rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-brand/50 hover:-translate-y-1 hover:shadow-[0_10px_40px_-15px_var(--brand)]"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-muted">
@@ -48,9 +49,16 @@ export function ProjectCard({ p, priority = false }: { p: Project; priority?: bo
             </span>
           ))}
         </div>
-        <p className="mt-4 pt-4 border-t border-border/50 text-[11px] font-mono text-brand/80">
-          {p.metric}
-        </p>
+        <div className="mt-4 pt-4 border-t border-border/50 flex flex-wrap gap-1.5">
+          {p.metric.split("·").map((m, idx) => (
+            <span
+              key={idx}
+              className="inline-flex items-center rounded bg-brand/5 border border-brand/20 px-2 py-0.5 text-[10px] font-mono text-brand"
+            >
+              {m.trim()}
+            </span>
+          ))}
+        </div>
       </div>
     </Link>
   );

@@ -1,7 +1,7 @@
 import { Reveal } from "./reveal";
 
 const skills = [
-  { label: "Languages", items: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"] },
+  { label: "Languages", items: ["JavaScript (ES6+)", "HTML5", "CSS3"] },
   { label: "Frontend", items: ["React", "Tailwind", "Framer Motion"] },
   { label: "Backend", items: ["Node.js", "Express.js", "REST APIs"] },
   { label: "Databases", items: ["MongoDB", "Mongoose", "MySQL"] },
@@ -14,7 +14,7 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="mx-auto max-w-5xl px-6 py-10 sm:py-16 border-t border-border"
+      className="mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 py-10 sm:py-16 border-t border-border"
     >
       <Reveal>
         <div className="grid gap-10 md:grid-cols-[1fr_2fr]">

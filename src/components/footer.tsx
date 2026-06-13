@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { ContactForm } from "./contact-form";
+import { ContactForm } from "./contact-ui";
 
 export function Footer() {
   return (
     <footer
       id="contact"
       aria-labelledby="contact-title"
-      className="mx-auto max-w-5xl px-6 pt-16 sm:pt-20 pb-10 border-t border-border"
+      className="relative overflow-hidden mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 pt-16 sm:pt-20 pb-10 border-t border-border"
     >
       <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contact</p>
       <h2 id="contact-title" className="mt-3 font-display text-3xl sm:text-5xl md:text-6xl leading-tight break-words">
@@ -43,18 +43,27 @@ export function Footer() {
         <div>
           <p className="text-xs uppercase tracking-wider text-brand mb-3">Currently</p>
           <ul className="space-y-1.5 text-muted-foreground">
-            <li><span className="text-foreground">Building:</span> MERN e-commerce</li>
-            <li><span className="text-foreground">Reading:</span> Designing Data-Intensive Apps</li>
-            <li><span className="text-foreground">Learning:</span> System design fundamentals</li>
+            <li><span className="text-foreground">Building:</span> Full-Stack Web Products</li>
+            <li><span className="text-foreground">Learning:</span> Advanced React & Node.js Architecture</li>
+            <li><span className="text-foreground">Degree:</span> BCA Student</li>
             <li><span className="text-foreground">Based in:</span> Jaipur, IN</li>
           </ul>
         </div>
       </div>
 
-      <div className="mt-12 pt-6 border-t border-border/50 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Priyansh Singh Purawat — built with React & TanStack.</p>
-        <p className="font-mono">v2.0</p>
+      {/* Footer Bottom Row */}
+      <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground font-mono">
+        <p>© {new Date().getFullYear()} Priyansh Singh Purawat. Handcrafted with React & Vite.</p>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="hover:text-brand transition-colors flex items-center gap-1 group cursor-pointer"
+        >
+          back_to_top <span className="group-hover:-translate-y-0.5 transition-transform">↑</span>
+        </button>
       </div>
+
+      {/* Decorative footer glow */}
+      <div className="absolute bottom-0 right-0 -z-10 size-80 rounded-full bg-brand/5 blur-3xl pointer-events-none" />
     </footer>
   );
 }

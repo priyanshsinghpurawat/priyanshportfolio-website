@@ -28,7 +28,7 @@ export function FullStack() {
     <section
       id="fullstack"
       aria-labelledby="fullstack-title"
-      className="mx-auto max-w-5xl px-6 py-10 sm:py-16 border-t border-border"
+      className="mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 py-10 sm:py-16 border-t border-border"
     >
       <Reveal>
         <div className="grid gap-10 md:grid-cols-[1fr_2fr]">

@@ -22,24 +22,25 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "ecommerce-mern",
-    name: "Full Stack E-Commerce",
-    tagline: "End-to-end MERN store with auth, cart, and checkout.",
+    name: "MensVibe",
+    tagline: "Modern MERN boutique fashion platform with secure payments, real-time alerts, and seller dashboards.",
     role: "Solo developer",
-    stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind"],
-    status: "In Progress",
+    stack: ["React 19", "Node.js", "Express.js", "MongoDB", "Redis", "Socket.io", "Razorpay", "Cloudinary", "Tailwind CSS 4"],
+    status: "Shipped",
     year: "2025",
     cover: ecommerceImg,
-    metric: "12+ REST endpoints · JWT auth · role-based access",
+    metric: "Redis caching · Razorpay integration · Socket.io",
     problem:
-      "Most tutorial e-commerce builds skip the messy parts — real auth, persistent carts, admin tooling. I wanted to ship the whole loop, not a demo.",
+      "Developing a boutique fashion platform requiring multi-party workflows (Admin, Seller, Buyer), secure payment processing, real-time alerts, and optimized backend caching.",
     approach: [
-      "Modeled users, products, carts, and orders in MongoDB with Mongoose schemas and indexed queries.",
-      "Built a stateless Express API with JWT access tokens and role-guarded admin routes.",
-      "Wired React + Context for cart state, with optimistic updates and a single source of truth on the server.",
-      "Deployed the API and client separately so each can scale and ship independently.",
+      "Built a modern frontend using React 19, Vite, Tailwind CSS 4, Framer Motion, React Router 7, and React Hook Form.",
+      "Designed a stateless Express backend with JWT authentication, Google OAuth, and Zod schema validation.",
+      "Integrated Razorpay payment workflow and Cloudinary API for responsive product image uploads.",
+      "Implemented Redis caching to optimize database queries and Helmet & rate-limiting middleware to secure endpoints.",
+      "Configured Socket.io for real-time notifications, admin analytics, and seller coupon management."
     ],
     outcome:
-      "A real store you can sign into, browse, buy, and admin — not a click-through prototype. Setting the foundation I'll reuse on every future MERN build.",
+      "A production-ready, highly secure fashion platform featuring advanced dashboard analytics, real-time state sync, and high-performance backend routing.",
     links: { github: "https://github.com/priyanshsinghpurawat" },
   },
   {

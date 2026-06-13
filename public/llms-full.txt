@@ -39,10 +39,12 @@ He is available for freelance projects, internships, and full-time roles in full
 
 ## Selected Projects
 
-### Full Stack E-Commerce (In Progress)
-A complete end-to-end e-commerce platform.
-- Stack: React, Node.js, Express, MongoDB, JWT, payment integration
-- Features: user auth, product catalog, cart, checkout, order history
+### MensVibe – Modern MERN E-Commerce Platform
+A production-ready boutique fashion platform featuring secure authentication, payment processing, real-time notifications, analytics dashboards, and optimized backend architecture.
+- Frontend: React 19, Vite, Tailwind CSS 4, Framer Motion, React Router 7, React Hook Form
+- Backend: Node.js, Express.js, MongoDB, Redis, Socket.io
+- Security & Services: JWT Authentication, Google OAuth, Zod Validation, Razorpay, Cloudinary, Helmet, Rate Limiting
+- Key Features: Multi-category filtering and search, product variants and inventory management, Admin and Seller dashboards, revenue analytics, coupon management, real-time notifications, secure payment workflow, Redis caching, media uploads via Cloudinary
 - Repo: https://github.com/priyanshsinghpurawat
 
 ### Aspect Ratio Calculator

@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import Sitemap from "vite-plugin-sitemap";
 
 export default defineConfig({
   plugins: [
@@ -10,6 +11,17 @@ export default defineConfig({
     react(),
     tailwindcss(),
     tsconfigPaths(),
+    Sitemap({
+      hostname: "https://priyanshsinghpurawat.github.io", // Adjust this later when the domain is final
+      dynamicRoutes: [
+        "/projects/ecommerce-mern",
+        "/projects/aspect-ratio-calculator",
+        "/projects/notes-app",
+        "/projects/exchange-rate",
+        "/writing/bca-self-taught-mern",
+        "/writing/why-i-switched-to-vite"
+      ]
+    }),
   ],
   server: {
     host: "::",

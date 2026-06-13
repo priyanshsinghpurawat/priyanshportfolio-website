@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Loader2, Send, CheckCircle2 } from "lucide-react";
-
-const WEB3FORMS_ACCESS_KEY = "85de76e5-2e0a-47e1-8244-bb63960fc650";
+import confetti from "canvas-confetti";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
@@ -14,19 +13,32 @@ export function ContactForm() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "New message from portfolio");
-    formData.append("from_name", "Portfolio site");
+    
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    const endpoint = (import.meta.env.VITE_CONTACT_API_URL as string) || "http://localhost:5000/api/contact";
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(endpoint, {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
-      if (data.success) {
+      if (res.ok && data.success) {
         setStatus("ok");
         form.reset();
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
       } else {
         setStatus("error");
         setError(data.message || "Something went wrong.");
@@ -39,7 +51,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-10 grid gap-4 sm:max-w-xl">
-      {/* honeypot */}
+      {/* bot protection check */}
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="grid sm:grid-cols-2 gap-4">

@@ -1,12 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/reveal";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { getPost } from "@/data/writing";
 
-const SITE_URL = "https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app";
+import { SITE_URL } from "@/lib/constants";
 
 export const Route = createFileRoute("/writing/$slug")({
   loader: ({ params }) => {
@@ -70,8 +71,12 @@ function PostDetail() {
     <div className="min-h-screen bg-background text-foreground">
       <ScrollProgress />
       <Header />
-      <main>
-        <article className="mx-auto max-w-2xl px-6 py-10 sm:py-16">
+      <motion.main
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <article className="mx-auto max-w-2xl px-4 sm:px-6 py-10 sm:py-16">
           <Link
             to="/writing"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand transition mb-8"
@@ -97,7 +102,7 @@ function PostDetail() {
             </div>
           </Reveal>
         </article>
-      </main>
+      </motion.main>
       <Footer />
     </div>
   );
