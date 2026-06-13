@@ -37,6 +37,26 @@ app.get("/", (req, res) => {
   res.json({ status: "ok", message: "Portfolio Backend is running." });
 });
 
+function escapeHTML(str) {
+  if (typeof str !== "string") return "";
+  return str.replace(/[&<>"']/g, (m) => {
+    switch (m) {
+      case "&":
+        return "&amp;";
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case '"':
+        return "&quot;";
+      case "'":
+        return "&#039;";
+      default:
+        return m;
+    }
+  });
+}
+
 // Contact Form Endpoint
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
@@ -58,6 +78,10 @@ app.post("/api/contact", async (req, res) => {
     });
   }
 
+  const escapedName = escapeHTML(name);
+  const escapedEmail = escapeHTML(email);
+  const escapedMessage = escapeHTML(message);
+
   try {
     // 2. Configure SMTP Transporter
     // Supported hosts: Gmail, Outlook, Resend, SendGrid, custom SMTP, etc.
@@ -73,17 +97,17 @@ app.post("/api/contact", async (req, res) => {
 
     // 3. Setup Email Structure
     const mailOptions = {
-      from: `"${name}" <${process.env.SMTP_USER}>`, // Sent from your address (to avoid spam filters)
-      replyTo: email, // Direct replies will go to the sender's email
+      from: `"${escapedName}" <${process.env.SMTP_USER}>`, // Sent from your address (to avoid spam filters)
+      replyTo: escapedEmail, // Direct replies will go to the sender's email
       to: process.env.RECEIVER_EMAIL || process.env.SMTP_USER, // Where you want to receive the messages
-      subject: `💼 New Portfolio Message from ${name}`,
+      subject: `💼 New Portfolio Message from ${escapedName}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; color: #333; line-height: 1.6; max-width: 600px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc;">
           <h2 style="color: #0d9488; margin-top: 0; border-bottom: 2px solid #0d9488; padding-bottom: 8px;">New Contact Message</h2>
-          <p><strong>From:</strong> ${name} (&lt;${email}&gt;)</p>
+          <p><strong>From:</strong> ${escapedName} (&lt;${escapedEmail}&gt;)</p>
           <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 20px 0;" />
-          <p style="white-space: pre-wrap; font-size: 15px; color: #475569; background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">${message}</p>
+          <p style="white-space: pre-wrap; font-size: 15px; color: #475569; background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">${escapedMessage}</p>
           <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 20px 0;" />
           <p style="font-size: 12px; color: #94a3b8; margin-bottom: 0;">Sent automatically from your developer portfolio website.</p>
         </div>
