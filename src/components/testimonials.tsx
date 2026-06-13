@@ -13,7 +13,7 @@ const endorsements: Endorsement[] = [
     quote:
       "Priyansh approaches problems like a senior engineer — he isolates the bug, fixes the root cause, and writes the code so the next person doesn't trip on it.",
     name: "Peer review",
-    role: "Group project, JECRC University",
+    role: "Group project collaborator",
     initials: "PR",
   },
   {

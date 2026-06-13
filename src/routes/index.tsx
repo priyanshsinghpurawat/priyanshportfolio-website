@@ -15,14 +15,14 @@ const OG_IMAGE = SITE_URL + ogImage;
 
 const TITLE = "Priyansh Singh Purawat — Full Stack Developer (MERN, React, Node.js)";
 const DESCRIPTION =
-  "Portfolio of Priyansh Singh Purawat — full-stack developer and BCA student at JECRC University, Jaipur. Building responsive web apps with React, Node.js, Express, MongoDB, and TypeScript.";
+  "Portfolio of Priyansh Singh Purawat — full-stack developer and BCA student based in Jaipur. Building responsive web apps with React, Node.js, Express, MongoDB, and TypeScript.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
-      { name: "keywords", content: "Priyansh Singh, Priyansh Singh Purawat, full stack developer, MERN developer, React developer, Node.js, JECRC University, Jaipur developer, web developer portfolio" },
+      { name: "keywords", content: "Priyansh Singh, Priyansh Singh Purawat, full stack developer, MERN developer, React developer, Node.js, Jaipur developer, web developer portfolio" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: SITE_URL + "/" },
@@ -54,11 +54,6 @@ export const Route = createFileRoute("/")({
             addressLocality: "Jaipur",
             addressRegion: "Rajasthan",
             addressCountry: "IN",
-          },
-          alumniOf: {
-            "@type": "CollegeOrUniversity",
-            name: "JECRC University",
-            address: { "@type": "PostalAddress", addressLocality: "Jaipur", addressCountry: "IN" },
           },
           knowsAbout: [
             "Full Stack Development",

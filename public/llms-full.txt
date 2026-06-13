@@ -4,7 +4,7 @@
 
 ## About
 
-Priyansh Singh Purawat is a full-stack developer based in Jaipur, India, and a current Bachelor of Computer Applications (BCA) student at JECRC University. He builds production-grade web applications across the entire MERN stack — MongoDB, Express.js, React, and Node.js — with a focus on responsive interfaces, clean component architecture, and end-to-end shipping (from database schema to deployed UI).
+Priyansh Singh Purawat is a full-stack developer based in Jaipur, India, and a current Bachelor of Computer Applications (BCA) student. He builds production-grade web applications across the entire MERN stack — MongoDB, Express.js, React, and Node.js — with a focus on responsive interfaces, clean component architecture, and end-to-end shipping (from database schema to deployed UI).
 
 He is available for freelance projects, internships, and full-time roles in full-stack web development.
 
@@ -60,7 +60,7 @@ A real-time currency converter that fetches live exchange-rate data and converts
 - Repo: https://github.com/priyanshsinghpurawat
 
 ## Education
-- Bachelor of Computer Applications (BCA) — JECRC University, Jaipur, India (current student)
+- Bachelor of Computer Applications (BCA) — Jaipur, India (current student)
 
 ## Location & Availability
 - Based in Jaipur, Rajasthan, India

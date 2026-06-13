@@ -27,7 +27,7 @@ export function About() {
           <div className="space-y-5 text-muted-foreground leading-relaxed">
             <p>
               I'm a <span className="text-foreground">Full Stack Developer</span> and{" "}
-              <span className="text-foreground">BCA student at JECRC, Jaipur</span>, specializing in
+              <span className="text-foreground">BCA student based in Jaipur</span>, specializing in
               the <span className="text-foreground">MERN stack</span> with a focus on clean,
               optimized code. I build responsive web applications end-to-end — from architectural
               planning to deployment.
