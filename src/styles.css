@@ -30,9 +30,9 @@
   --color-ring: var(--ring);
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'League Spartan', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 /* LIGHT MODE — teal palette
@@ -180,6 +180,6 @@ section[id] {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-feature-settings: "calt" 1, "liga" 1, "ss01", "ss02", "ss03";
   }
 }

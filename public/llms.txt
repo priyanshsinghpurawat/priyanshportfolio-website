@@ -1,6 +1,6 @@
 # Priyansh Singh Purawat — Full Stack Developer
 
-> Portfolio of Priyansh Singh Purawat, a full-stack developer and BCA student at JECRC University (Jaipur, India) specializing in the MERN stack (MongoDB, Express, React, Node.js) and modern full-stack web development. Available for freelance and full-time work.
+> Portfolio of Priyansh Singh Purawat, a full-stack developer and BCA student based in Jaipur, India, specializing in the MERN stack (MongoDB, Express, React, Node.js) and modern full-stack web development. Available for freelance and full-time work.
 
 Priyansh builds responsive, end-to-end web applications using React, Node.js, TypeScript, Tailwind CSS, and modern JavaScript tooling. He focuses on clean architecture, accessible UI, and shipping real products from database to deployment.
 
@@ -21,7 +21,7 @@ Priyansh builds responsive, end-to-end web applications using React, Node.js, Ty
 - Exchange Rate App — Real-time currency converter using live exchange-rate API. https://priyanshsinghpurawat.github.io/Exchange-Rate/
 
 ## Education
-- Bachelor of Computer Applications (BCA) — JECRC University, Jaipur, India (current)
+- Bachelor of Computer Applications (BCA) — Jaipur, India (current)
 
 ## Focus areas
 - Full-stack web development (frontend, backend, database, DevOps)

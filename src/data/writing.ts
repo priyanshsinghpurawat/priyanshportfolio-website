@@ -16,7 +16,7 @@ export const posts: Post[] = [
     date: "2025-08-12",
     readingTime: "4 min read",
     body: [
-      "I started my BCA at JECRC University expecting to be handed a curriculum that pointed at a job. What I got was the foundation — DSA, OS, networks — and a wide-open question: which stack do I actually want to be good at?",
+      "I started my BCA expecting to be handed a curriculum that pointed at a job. What I got was the foundation — DSA, OS, networks — and a wide-open question: which stack do I actually want to be good at?",
       "MERN won because the loop was the shortest. JavaScript on the frontend, JavaScript on the backend, a database I could model in five minutes, and a deploy story I could understand without a DevOps degree. From idea to a shipped feature in an afternoon.",
       "If I were starting today, I'd ignore the framework wars for the first six months. Learn vanilla JS deeply, build three CRUD apps without React, then add React only when you feel the pain it solves. Same for state libraries — wait until Context hurts.",
       "The thing nobody tells you: shipping ugly is more valuable than learning pretty. Every project on this site started broken, looked bad for a week, then got polished. The polish is the last 10% — the first 90% is just finishing.",

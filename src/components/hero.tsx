@@ -43,7 +43,7 @@ export function Hero() {
             thoughtful web things.
           </h1>
           <p className="mt-7 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            <strong className="text-foreground font-semibold">BCA student at JECRC University</strong>{" "}
+            <strong className="text-foreground font-semibold">BCA student</strong>{" "}
             focused on the{" "}
             <strong className="text-foreground font-semibold">modern JavaScript stack</strong> —{" "}
             <strong className="text-foreground font-semibold">React</strong>,{" "}
