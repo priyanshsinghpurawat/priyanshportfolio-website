@@ -32,9 +32,9 @@ export function ProjectCard({ p, priority = false }: { p: Project; priority?: bo
             <p className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
               {p.year} · {p.role}
             </p>
-            <h3 className="mt-2 font-display text-xl text-foreground group-hover:text-brand transition-colors">
+            <h2 className="mt-2 font-display text-xl text-foreground group-hover:text-brand transition-colors">
               {p.name}
-            </h3>
+            </h2>
           </div>
           <ArrowUpRight className="size-5 shrink-0 text-muted-foreground group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
         </div>

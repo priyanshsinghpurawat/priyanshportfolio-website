@@ -67,4 +67,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/sitemap.xml
+Sitemap: https://priyanshportfolio-website-vercel-app.lovable.app/sitemap.xml

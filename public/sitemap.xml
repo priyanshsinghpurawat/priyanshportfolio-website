@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/projects</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/projects/ecommerce-mern</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/projects/ecommerce-mern</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/projects/aspect-ratio-calculator</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/projects/aspect-ratio-calculator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/projects/notes-app</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/projects/notes-app</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/projects/exchange-rate</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/projects/exchange-rate</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/writing</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/writing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/writing/bca-self-taught-mern</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/writing/bca-self-taught-mern</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/writing/why-i-switched-to-vite</loc>
+    <loc>https://priyanshportfolio-website-vercel-app.lovable.app/writing/why-i-switched-to-vite</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
