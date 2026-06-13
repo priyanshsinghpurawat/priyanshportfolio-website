@@ -1,4 +1,3 @@
-
 # Two small changes
 
 ## 1. Remove all "JECRC University" mentions

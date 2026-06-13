@@ -17,7 +17,9 @@ export function Experience() {
       <Reveal>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Selected work</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Selected work
+            </p>
             <h2 id="experience-title" className="mt-3 font-display text-3xl sm:text-4xl">
               Things I've <span className="italic text-brand">built</span>.
             </h2>
@@ -36,7 +38,7 @@ export function Experience() {
       <Reveal delay={0.1}>
         <div className="mt-10 group relative grid md:grid-cols-2 items-center gap-8 lg:gap-12 rounded-[2rem] border border-border bg-card/40 p-6 sm:p-8 overflow-hidden hover:border-brand/40 transition-colors">
           <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          
+
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border/50 bg-muted shadow-2xl">
             <img
               src={featured.cover}
@@ -54,19 +56,31 @@ export function Experience() {
 
           <div className="relative flex flex-col justify-center">
             <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-              {featured.name} <span className="text-muted-foreground font-normal">— Full Stack E-Commerce</span>
+              {featured.name}{" "}
+              <span className="text-muted-foreground font-normal">— Full Stack E-Commerce</span>
             </h3>
-            
+
             <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              A production-ready boutique platform built with the MERN stack, featuring real-time analytics, glassmorphic UI, and LRU caching for high performance.
+              A production-ready boutique platform built with the MERN stack, featuring real-time
+              analytics, glassmorphic UI, and LRU caching for high performance.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="rounded-full bg-[#00B9AE]/10 text-[#00B9AE] border border-[#00B9AE]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">React 19</span>
-              <span className="rounded-full bg-[#339933]/10 text-[#339933] border border-[#339933]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">Node.js</span>
-              <span className="rounded-full bg-[#47A248]/10 text-[#47A248] border border-[#47A248]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">MongoDB</span>
-              <span className="rounded-full bg-[#DC382D]/10 text-[#DC382D] border border-[#DC382D]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">Redis</span>
-              <span className="rounded-full bg-[#38B2AC]/10 text-[#38B2AC] border border-[#38B2AC]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">Tailwind 4</span>
+              <span className="rounded-full bg-[#00B9AE]/10 text-[#00B9AE] border border-[#00B9AE]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">
+                React 19
+              </span>
+              <span className="rounded-full bg-[#339933]/10 text-[#339933] border border-[#339933]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">
+                Node.js
+              </span>
+              <span className="rounded-full bg-[#47A248]/10 text-[#47A248] border border-[#47A248]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">
+                MongoDB
+              </span>
+              <span className="rounded-full bg-[#DC382D]/10 text-[#DC382D] border border-[#DC382D]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">
+                Redis
+              </span>
+              <span className="rounded-full bg-[#38B2AC]/10 text-[#38B2AC] border border-[#38B2AC]/20 px-3 py-1 text-xs font-mono font-medium shadow-sm">
+                Tailwind 4
+              </span>
             </div>
 
             <ul className="mt-6 space-y-2 text-sm text-muted-foreground font-medium">

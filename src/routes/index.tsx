@@ -19,7 +19,11 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: SITE_TITLE },
       { name: "description", content: SITE_DESCRIPTION },
-      { name: "keywords", content: "Priyansh Singh, Priyansh Singh Purawat, full stack developer, MERN developer, React developer, Node.js, Jaipur developer, web developer portfolio" },
+      {
+        name: "keywords",
+        content:
+          "Priyansh Singh, Priyansh Singh Purawat, full stack developer, MERN developer, React developer, Node.js, Jaipur developer, web developer portfolio",
+      },
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:url", content: SITE_URL + "/" },

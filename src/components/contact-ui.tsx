@@ -13,14 +13,15 @@ export function ContactForm() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    
+
     const payload = {
       name: formData.get("name"),
       email: formData.get("email"),
       message: formData.get("message"),
     };
 
-    const endpoint = (import.meta.env.VITE_CONTACT_API_URL as string) || "http://localhost:5000/api/contact";
+    const endpoint =
+      (import.meta.env.VITE_CONTACT_API_URL as string) || "http://localhost:5000/api/contact";
 
     try {
       const res = await fetch(endpoint, {

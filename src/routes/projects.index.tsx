@@ -43,8 +43,8 @@ function ProjectsPage() {
             Things I've <span className="italic text-brand">built</span>.
           </h1>
           <p className="mt-4 max-w-xl text-muted-foreground leading-relaxed">
-            A handful of projects I'm proud of — each with a problem worth solving and a story
-            worth telling. Click any card for the full case study.
+            A handful of projects I'm proud of — each with a problem worth solving and a story worth
+            telling. Click any card for the full case study.
           </p>
         </Reveal>
 

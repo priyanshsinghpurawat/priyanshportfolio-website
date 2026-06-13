@@ -5,16 +5,9 @@ import portrait from "@/assets/portrait.png";
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      aria-labelledby="hero-title"
-      className="relative overflow-hidden"
-    >
+    <section id="home" aria-labelledby="hero-title" className="relative overflow-hidden">
       {/* Background texture */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10"
-      >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,var(--brand)_0%,transparent_45%)] opacity-[0.08]" />
         <div className="absolute inset-0 opacity-[0.04] bg-hero-pattern" />
       </div>
@@ -57,7 +50,8 @@ export function Hero() {
               {/* Quote/Description block */}
               <div className="relative pl-4 border-l-2 border-brand/40">
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  BCA student and Full-Stack Developer specializing in the modern JavaScript ecosystem. I build fast, scalable applications using React, Node.js, and MongoDB.
+                  BCA student and Full-Stack Developer specializing in the modern JavaScript
+                  ecosystem. I build fast, scalable applications using React, Node.js, and MongoDB.
                 </p>
               </div>
 
@@ -87,7 +81,13 @@ export function Hero() {
 
           {/* Sub-card CLI details */}
           <div className="flex items-center mt-3 px-1 font-mono text-xs text-muted-foreground">
-            <a href="/resume.pdf" download title="Download Resume (.pdf)" data-cursor="download" className="hover:text-brand transition flex items-center gap-1.5">
+            <a
+              href="/resume.pdf"
+              download
+              title="Download Resume (.pdf)"
+              data-cursor="download"
+              className="hover:text-brand transition flex items-center gap-1.5"
+            >
               <span className="text-brand">$</span> download resume.pdf
             </a>
           </div>
@@ -100,7 +100,10 @@ export function Hero() {
             aria-hidden="true"
           />
           <div className="relative mx-auto lg:mx-0 lg:ml-auto w-56 sm:w-72 lg:w-full max-w-sm">
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-brand/40 via-transparent to-transparent blur-xl opacity-60" aria-hidden="true" />
+            <div
+              className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-brand/40 via-transparent to-transparent blur-xl opacity-60"
+              aria-hidden="true"
+            />
             <img
               src={portrait}
               alt="Stylized portrait of Priyansh Singh Purawat"

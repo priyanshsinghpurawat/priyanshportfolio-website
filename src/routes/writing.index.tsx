@@ -59,7 +59,12 @@ function WritingPage() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
-                        {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} · {post.readingTime}
+                        {new Date(post.date).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}{" "}
+                        · {post.readingTime}
                       </p>
                       <h2 className="mt-2 font-display text-xl group-hover:text-brand transition">
                         {post.title}

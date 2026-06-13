@@ -29,7 +29,9 @@ export function WorkExperience() {
       className="mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 py-10 sm:py-16 border-t border-border"
     >
       <Reveal>
-        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Professional Journey</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          Professional Journey
+        </p>
         <h2 id="work-title" className="mt-3 font-display text-3xl sm:text-4xl">
           Where I've <span className="italic text-brand">worked</span>.
         </h2>
@@ -49,9 +51,7 @@ export function WorkExperience() {
                       <Briefcase className="size-5 text-brand" />
                       {job.company}
                     </h3>
-                    <p className="mt-1 text-sm font-medium text-muted-foreground">
-                      {job.role}
-                    </p>
+                    <p className="mt-1 text-sm font-medium text-muted-foreground">{job.role}</p>
                   </div>
                   <div className="flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs font-mono text-muted-foreground">
                     <Calendar className="size-3.5 text-brand" />

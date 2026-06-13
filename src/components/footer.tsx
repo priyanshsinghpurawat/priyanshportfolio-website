@@ -9,7 +9,10 @@ export function Footer() {
       className="relative overflow-hidden mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 pt-16 sm:pt-20 pb-10 border-t border-border"
     >
       <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contact</p>
-      <h2 id="contact-title" className="mt-3 font-display text-3xl sm:text-5xl md:text-6xl leading-tight break-words">
+      <h2
+        id="contact-title"
+        className="mt-3 font-display text-3xl sm:text-5xl md:text-6xl leading-tight break-words"
+      >
         Got an idea? <br />
         <a
           href="mailto:priyanshsinghpurawatji@gmail.com"
@@ -25,28 +28,82 @@ export function Footer() {
         <div>
           <p className="text-xs uppercase tracking-wider text-brand mb-3">Navigate</p>
           <ul className="space-y-1.5 text-muted-foreground">
-            <li><Link to="/" className="hover:text-foreground transition">Home</Link></li>
-            <li><Link to="/projects" className="hover:text-foreground transition">Projects</Link></li>
-            <li><Link to="/writing" className="hover:text-foreground transition">Writing</Link></li>
-            <li><a href="/#about" className="hover:text-foreground transition">About</a></li>
+            <li>
+              <Link to="/" className="hover:text-foreground transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/projects" className="hover:text-foreground transition">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/writing" className="hover:text-foreground transition">
+                Writing
+              </Link>
+            </li>
+            <li>
+              <a href="/#about" className="hover:text-foreground transition">
+                About
+              </a>
+            </li>
           </ul>
         </div>
         <div>
           <p className="text-xs uppercase tracking-wider text-brand mb-3">Elsewhere</p>
           <ul className="space-y-1.5 text-muted-foreground">
-            <li><a href="https://github.com/priyanshsinghpurawat" target="_blank" rel="noreferrer" className="hover:text-foreground transition">GitHub ↗</a></li>
-            <li><a href="https://www.linkedin.com/in/priyansh-singh-purawat/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">LinkedIn ↗</a></li>
-            <li><a href="mailto:priyanshsinghpurawatji@gmail.com" className="hover:text-foreground transition">Email</a></li>
-            <li><a href="tel:+919460177215" className="hover:text-foreground transition">+91 94601 77215</a></li>
+            <li>
+              <a
+                href="https://github.com/priyanshsinghpurawat"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground transition"
+              >
+                GitHub ↗
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/priyansh-singh-purawat/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground transition"
+              >
+                LinkedIn ↗
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:priyanshsinghpurawatji@gmail.com"
+                className="hover:text-foreground transition"
+              >
+                Email
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919460177215" className="hover:text-foreground transition">
+                +91 94601 77215
+              </a>
+            </li>
           </ul>
         </div>
         <div>
           <p className="text-xs uppercase tracking-wider text-brand mb-3">Currently</p>
           <ul className="space-y-1.5 text-muted-foreground">
-            <li><span className="text-foreground">Building:</span> Full-Stack Web Products</li>
-            <li><span className="text-foreground">Learning:</span> Advanced React & Node.js Architecture</li>
-            <li><span className="text-foreground">Degree:</span> BCA Student</li>
-            <li><span className="text-foreground">Based in:</span> Jaipur, IN</li>
+            <li>
+              <span className="text-foreground">Building:</span> Full-Stack Web Products
+            </li>
+            <li>
+              <span className="text-foreground">Learning:</span> Advanced React & Node.js
+              Architecture
+            </li>
+            <li>
+              <span className="text-foreground">Degree:</span> BCA Student
+            </li>
+            <li>
+              <span className="text-foreground">Based in:</span> Jaipur, IN
+            </li>
           </ul>
         </div>
       </div>

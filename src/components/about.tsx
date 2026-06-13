@@ -43,7 +43,9 @@ export function About() {
                 <div key={s.label} className="rounded-lg border border-border bg-card p-4">
                   <p className="text-xs uppercase tracking-wider text-brand mb-2">{s.label}</p>
                   <ul className="space-y-1 text-sm text-foreground">
-                    {s.items.map((i) => <li key={i}>{i}</li>)}
+                    {s.items.map((i) => (
+                      <li key={i}>{i}</li>
+                    ))}
                   </ul>
                 </div>
               ))}

@@ -23,9 +23,20 @@ export const projects: Project[] = [
   {
     slug: "ecommerce-mern",
     name: "MensVibe",
-    tagline: "Modern MERN boutique fashion platform with secure payments, real-time alerts, and seller dashboards.",
+    tagline:
+      "Modern MERN boutique fashion platform with secure payments, real-time alerts, and seller dashboards.",
     role: "Solo developer",
-    stack: ["React 19", "Node.js", "Express.js", "MongoDB", "Redis", "Socket.io", "Razorpay", "Cloudinary", "Tailwind CSS 4"],
+    stack: [
+      "React 19",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Redis",
+      "Socket.io",
+      "Razorpay",
+      "Cloudinary",
+      "Tailwind CSS 4",
+    ],
     status: "Shipped",
     year: "2025",
     cover: ecommerceImg,
@@ -37,7 +48,7 @@ export const projects: Project[] = [
       "Designed a stateless Express backend with JWT authentication, Google OAuth, and Zod schema validation.",
       "Integrated Razorpay payment workflow and Cloudinary API for responsive product image uploads.",
       "Implemented Redis caching to optimize database queries and Helmet & rate-limiting middleware to secure endpoints.",
-      "Configured Socket.io for real-time notifications, admin analytics, and seller coupon management."
+      "Configured Socket.io for real-time notifications, admin analytics, and seller coupon management.",
     ],
     outcome:
       "A production-ready, highly secure fashion platform featuring advanced dashboard analytics, real-time state sync, and high-performance backend routing.",

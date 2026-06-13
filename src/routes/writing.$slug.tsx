@@ -86,7 +86,12 @@ function PostDetail() {
 
           <Reveal>
             <p className="text-xs font-mono uppercase tracking-wider text-brand">
-              {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · {post.readingTime}
+              {new Date(post.date).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}{" "}
+              · {post.readingTime}
             </p>
             <h1 className="mt-3 font-display text-4xl sm:text-5xl tracking-tight leading-[1.1]">
               {post.title}

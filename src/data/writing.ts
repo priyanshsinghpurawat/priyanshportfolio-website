@@ -25,8 +25,7 @@ export const posts: Post[] = [
   {
     slug: "why-i-switched-to-vite",
     title: "Why I switched from Create React App to Vite",
-    excerpt:
-      "CRA was the default. Vite was a 10x speedup. Here's what changed and what didn't.",
+    excerpt: "CRA was the default. Vite was a 10x speedup. Here's what changed and what didn't.",
     date: "2025-09-04",
     readingTime: "3 min read",
     body: [

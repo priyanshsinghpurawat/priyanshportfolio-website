@@ -217,8 +217,12 @@ function ProjectDetail() {
               className="mt-16 group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card p-5 hover:border-brand/50 transition"
             >
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">Next case study</p>
-                <p className="mt-1 font-display text-lg group-hover:text-brand transition">{next.name}</p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                  Next case study
+                </p>
+                <p className="mt-1 font-display text-lg group-hover:text-brand transition">
+                  {next.name}
+                </p>
               </div>
               <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
             </Link>

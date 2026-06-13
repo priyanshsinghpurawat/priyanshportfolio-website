@@ -19,8 +19,8 @@ export default defineConfig({
         "/projects/notes-app",
         "/projects/exchange-rate",
         "/writing/bca-self-taught-mern",
-        "/writing/why-i-switched-to-vite"
-      ]
+        "/writing/why-i-switched-to-vite",
+      ],
     }),
   ],
   server: {

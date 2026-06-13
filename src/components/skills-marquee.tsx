@@ -1,15 +1,40 @@
 import {
-  SiReact, SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiMongoose,
-  SiTailwindcss, SiFramer, SiJavascript, SiGit, SiGithub,
-  SiNetlify, SiPostman, SiHtml5, SiCss, SiDocker, SiVercel,
-  SiRender, SiJest, SiVitest, SiGithubactions, SiSocketdotio,
-  SiRedis, SiReactquery, SiZod, SiCloudinary
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiMongoose,
+  SiTailwindcss,
+  SiFramer,
+  SiJavascript,
+  SiGit,
+  SiGithub,
+  SiNetlify,
+  SiPostman,
+  SiHtml5,
+  SiCss,
+  SiDocker,
+  SiVercel,
+  SiRender,
+  SiJest,
+  SiVitest,
+  SiGithubactions,
+  SiSocketdotio,
+  SiRedis,
+  SiReactquery,
+  SiZod,
+  SiCloudinary,
 } from "react-icons/si";
 import { Webhook, Table } from "lucide-react";
 import type { IconType } from "react-icons";
 import { Reveal } from "./reveal";
 
-type Skill = { name: string; Icon: IconType | React.ComponentType<any>; color: string };
+type Skill = {
+  name: string;
+  Icon: IconType | React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  color: string;
+};
 
 const clientSkills: Skill[] = [
   { name: "React", Icon: SiReact, color: "#61DAFB" },

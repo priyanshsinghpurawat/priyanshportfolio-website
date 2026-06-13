@@ -17,16 +17,18 @@ const allowedOrigins = [
   // Add any other domains you plan to host the portfolio on
 ];
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Blocked by CORS policy"));
-    }
-  },
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Blocked by CORS policy"));
+      }
+    },
+    credentials: true,
+  }),
+);
 
 app.use(express.json());
 
@@ -43,7 +45,7 @@ app.post("/api/contact", async (req, res) => {
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
-      message: "Please fill out all fields (name, email, message)."
+      message: "Please fill out all fields (name, email, message).",
     });
   }
 
@@ -52,7 +54,7 @@ app.post("/api/contact", async (req, res) => {
   if (!emailRegex.test(email)) {
     return res.status(400).json({
       success: false,
-      message: "Please provide a valid email address."
+      message: "Please provide a valid email address.",
     });
   }
 
@@ -93,13 +95,13 @@ app.post("/api/contact", async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      message: "Your message has been sent successfully!"
+      message: "Your message has been sent successfully!",
     });
   } catch (error) {
     console.error("Nodemailer error:", error);
     return res.status(500).json({
       success: false,
-      message: "Server error: Failed to send the email. Please try again later."
+      message: "Server error: Failed to send the email. Please try again later.",
     });
   }
 });
