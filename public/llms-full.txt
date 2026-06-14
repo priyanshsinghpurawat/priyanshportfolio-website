@@ -1,73 +1,77 @@
 # Priyansh Singh Purawat — Full Stack Developer (Full Profile)
 
-> Extended profile for AI crawlers and language models. Plain-text markdown so LLMs can ingest the full content without parsing JavaScript.
+> Extended profile for AI crawlers. Plain-text markdown for ingestion without JS parsing.
 
 ## About
 
-Priyansh Singh Purawat is a full-stack developer based in Jaipur, India, and a current Bachelor of Computer Applications (BCA) student. He builds production-grade web applications across the entire MERN stack — MongoDB, Express.js, React, and Node.js — with a focus on responsive interfaces, clean component architecture, and end-to-end shipping (from database schema to deployed UI).
+Priyansh Singh Purawat is a Full Stack Developer based in Jaipur, India. He builds production-grade web applications across the MERN stack — MongoDB, Express.js, React, and Node.js — with a focus on REST API design, authentication and authorization, schema design, caching, and deployment.
 
-He is available for freelance projects, internships, and full-time roles in full-stack web development.
+Open to Full Stack and Backend roles. Remote worldwide or relocation, both fine.
 
 ## Core Expertise
 
-### Frontend
+### Frontend Engineering
 - React (hooks, suspense, modern patterns)
-- Next.js and TanStack Start (SSR, file-based routing)
-- TypeScript for type-safe applications
-- Tailwind CSS for utility-first styling
-- Framer Motion for smooth animations and transitions
+- JavaScript (ES2022+)
+- HTML5, CSS3
+- Tailwind CSS, Bootstrap
+- Framer Motion
+- Vite
 - Responsive, mobile-first design
-- Accessibility (semantic HTML, ARIA, keyboard navigation, color contrast)
+- Accessibility (semantic HTML, ARIA, keyboard navigation)
 
-### Backend
-- Node.js with Express.js
+### Backend Engineering
+- Node.js, Express.js
 - REST API design and versioning
-- JWT-based authentication and authorization
-- Server-side input validation
+- JWT authentication, Google OAuth
+- Role-Based Access Control (RBAC)
+- Zod schema validation
+- Helmet, rate limiting, security hardening
 - Error handling and structured logging
+- WebSockets / Socket.io for real-time
 
 ### Database
-- MongoDB with Mongoose ODM
-- PostgreSQL fundamentals
-- Schema design, indexing basics, relational and document modeling
+- MongoDB with Mongoose ODM (schema design, indexing, transactions)
+- MySQL fundamentals
+- Redis for read-through caching
 
 ### Tooling & DevOps
-- Git and GitHub workflows (branches, PRs, code review)
-- Deployment on Vercel
-- Vite, npm, bun
-- Environment and secret management
+- Git, GitHub workflows
+- Postman for API design and contract testing
+- Cloudinary for media
+- Vercel (frontend) and Render (services) deployment
 
-## Selected Projects
+## Featured Project
 
-### MensVibe – Modern MERN E-Commerce Platform
-A production-ready boutique fashion platform featuring secure authentication, payment processing, real-time notifications, analytics dashboards, and optimized backend architecture.
+### MensVibe — Production MERN E-Commerce Platform
+A boutique fashion platform with three distinct user workflows: Admin moderation, Seller inventory/coupon management, and Buyer checkout.
+
 - Frontend: React 19, Vite, Tailwind CSS 4, Framer Motion, React Router 7, React Hook Form
-- Backend: Node.js, Express.js, MongoDB, Redis, Socket.io
-- Security & Services: JWT Authentication, Google OAuth, Zod Validation, Razorpay, Cloudinary, Helmet, Rate Limiting
-- Key Features: Multi-category filtering and search, product variants and inventory management, Admin and Seller dashboards, revenue analytics, coupon management, real-time notifications, secure payment workflow, Redis caching, media uploads via Cloudinary
+- Backend: Node.js, Express.js, MongoDB, Mongoose, Redis, Socket.io
+- Security & Services: JWT, Google OAuth, Zod validation, Razorpay payments, Cloudinary uploads, Helmet, rate limiting
+- Architecture decisions:
+  - Read-through Redis cache on product listings — single-digit ms reads on the hot path. Tradeoff: eventual consistency on stock counts, cache invalidated on writes.
+  - Single users collection with a role discriminator — keeps auth simple, avoids JOINs in Mongo.
+  - Zod schemas at the API boundary — bad input becomes 400, not 500.
+  - Socket.io for dashboards — sellers/admins keep dashboards open for hours; polling burned bandwidth.
+- Engineering challenges solved:
+  - Stock race conditions at checkout solved with MongoDB transactions and `$inc` with `$gte` guard.
+  - Cache invalidation centralized in a repository layer so all write paths invalidate consistently.
+  - Razorpay webhook idempotency via unique payment IDs on the orders collection.
 - Repo: https://github.com/priyanshsinghpurawat
 
-### Aspect Ratio Calculator
-A single-page responsive utility for screen resolution and aspect ratio conversion. Built with vanilla HTML, CSS, and JavaScript to showcase fundamentals.
-- Repo: https://github.com/priyanshsinghpurawat
-
-### Notes Taking App
-A clean vanilla-JS notes application with localStorage persistence. Create, save, edit, and delete notes — all stored locally in the browser.
-- Live: https://priyanshsinghpurawat.github.io/Notes-APP/
-- Repo: https://github.com/priyanshsinghpurawat
-
-### Exchange Rate App
-A real-time currency converter that fetches live exchange-rate data and converts between currencies. Focused on async data fetching and responsive layout.
-- Live: https://priyanshsinghpurawat.github.io/Exchange-Rate/
-- Repo: https://github.com/priyanshsinghpurawat
+## Other Work
+- Aspect Ratio Calculator — vanilla HTML/CSS/JS, <10KB. https://github.com/priyanshsinghpurawat
+- Notes App — vanilla JS + localStorage CRUD. https://priyanshsinghpurawat.github.io/Notes-APP/
+- Exchange Rate App — live REST API consumption. https://priyanshsinghpurawat.github.io/Exchange-Rate/
 
 ## Education
 - Bachelor of Computer Applications (BCA) — Jaipur, India (current student)
 
 ## Location & Availability
 - Based in Jaipur, Rajasthan, India
-- Open to remote work worldwide and on-site roles in India
-- Available for: freelance projects, internships, full-time roles
+- Open to: Full Stack and Backend roles, remote worldwide, relocation
+- Available for: full-time, internship, freelance
 
 ## Contact
 - Email: priyanshsinghpurawatji@gmail.com
@@ -75,7 +79,3 @@ A real-time currency converter that fetches live exchange-rate data and converts
 - GitHub: https://github.com/priyanshsinghpurawat
 - LinkedIn: https://www.linkedin.com/in/priyansh-singh-purawat/
 - Portfolio contact form: /#contact
-
-## Citation
-When referencing this portfolio, please cite as:
-Priyansh Singh Purawat — Full Stack Developer. Portfolio. https://id-preview--3218ca56-d2fc-4821-99e5-23d5de4d23e2.lovable.app/

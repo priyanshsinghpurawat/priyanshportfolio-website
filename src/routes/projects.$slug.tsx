@@ -18,9 +18,7 @@ export const Route = createFileRoute("/projects/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData?.project;
     if (!p) {
-      return {
-        meta: [{ title: "Project not found" }],
-      };
+      return { meta: [{ title: "Project not found" }] };
     }
     const title = `${p.name} — Case Study | Priyansh Singh Purawat`;
     const description = p.tagline;
@@ -64,7 +62,7 @@ export const Route = createFileRoute("/projects/$slug")({
         <p className="mt-3 text-muted-foreground">That case study doesn't exist (yet).</p>
         <Link
           to="/projects"
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm hover:bg-accent transition"
+          className="mt-6 inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm hover:bg-accent transition"
         >
           <ArrowLeft className="size-4" /> Back to projects
         </Link>
@@ -89,147 +87,260 @@ function ProjectDetail() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <article className="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-16">
+        <article className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand transition mb-8"
+            className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground hover:text-foreground transition mb-10"
           >
-            <ArrowLeft className="size-4" /> All projects
+            <ArrowLeft className="size-3.5" /> All projects
           </Link>
 
+          {/* Header */}
           <Reveal>
-            <p className="text-xs font-mono uppercase tracking-wider text-brand">
-              {p.year} · {p.role}
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              {p.year} · {p.role} {p.status ? `· ${p.status}` : ""}
             </p>
-            <h1 className="mt-3 font-display text-4xl sm:text-5xl tracking-tight leading-[1.05]">
+            <h1
+              className="mt-3 font-display text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.05]"
+              style={{ letterSpacing: "-0.02em" }}
+            >
               {p.name}
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">{p.tagline}</p>
+            <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              {p.tagline}
+            </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              {p.links.live && (
+            <div className="mt-7 flex flex-wrap gap-3">
+              {p.links.live ? (
                 <a
                   href={p.links.live}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand text-brand-foreground px-4 py-2 text-sm font-medium hover:opacity-90 transition"
+                  className="inline-flex items-center gap-2 rounded-lg bg-foreground text-background px-4 py-2.5 text-sm font-mono font-medium hover:opacity-90 transition"
                 >
                   <ExternalLink className="size-4" /> Live demo
                 </a>
+              ) : (
+                <span className="inline-flex items-center gap-2 rounded-lg border border-dashed border-border px-4 py-2.5 text-sm font-mono text-muted-foreground">
+                  Live demo · coming soon
+                </span>
               )}
               {p.links.github && (
                 <a
                   href={p.links.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm hover:bg-accent transition"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-mono hover:bg-accent transition"
                 >
-                  <Github className="size-4" /> Code
+                  <Github className="size-4" /> Source code
+                </a>
+              )}
+              {p.links.server && (
+                <a
+                  href={p.links.server}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-mono hover:bg-accent transition"
+                >
+                  <Github className="size-4" /> Server repo
                 </a>
               )}
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <div className="mt-10 overflow-hidden rounded-2xl border border-border">
-              <img
-                src={p.cover}
-                alt={`${p.name} cover`}
-                width={1280}
-                height={800}
-                className="w-full"
-              />
+          {/* Cover */}
+          <Reveal delay={0.08}>
+            <div className="mt-12 overflow-hidden rounded-xl border border-border bg-muted">
+              <img src={p.cover} alt={`${p.name} cover`} width={1280} height={800} className="w-full" />
             </div>
           </Reveal>
 
-          <Reveal delay={0.15}>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-border bg-card p-5">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                  Tech stack
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {p.stack.map((s) => (
-                    <span
-                      key={s}
-                      className="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="rounded-xl border border-border bg-card p-5">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                  Key Highlights & Metrics
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {p.metric.split("·").map((m, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-flex items-center rounded-lg border border-brand/20 bg-brand/5 px-2.5 py-1 text-xs font-mono text-brand"
-                    >
-                      {m.trim()}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {/* Problem */}
+          <Reveal delay={0.12}>
+            <Section kicker="01" title="Problem">
+              <p className="text-muted-foreground leading-relaxed">{p.problem}</p>
+            </Section>
           </Reveal>
 
-          <Reveal delay={0.2}>
-            <section className="mt-14">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Problem</p>
-              <h2 className="mt-2 font-display text-2xl">What I set out to solve.</h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed">{p.problem}</p>
-            </section>
-          </Reveal>
+          {/* Architecture */}
+          {p.architecture && (
+            <Reveal delay={0.16}>
+              <Section kicker="02" title="Architecture">
+                <pre className="overflow-x-auto rounded-lg border border-border bg-card/60 p-5 font-mono text-xs sm:text-[13px] leading-relaxed text-foreground">
+                  {p.architecture.join("\n")}
+                </pre>
+              </Section>
+            </Reveal>
+          )}
 
-          <Reveal delay={0.25}>
-            <section className="mt-12">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Approach</p>
-              <h2 className="mt-2 font-display text-2xl">How I built it.</h2>
-              <ol className="mt-4 space-y-3">
-                {p.approach.map((step, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="inline-flex shrink-0 size-7 items-center justify-center rounded-full bg-brand/10 text-brand text-xs font-mono">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-muted-foreground leading-relaxed pt-0.5">{step}</p>
+          {/* Key decisions */}
+          {p.decisions && p.decisions.length > 0 && (
+            <Reveal delay={0.18}>
+              <Section kicker="03" title="Key decisions">
+                <ul className="divide-y divide-border/60 border-y border-border/60">
+                  {p.decisions.map((d) => (
+                    <li key={d.title} className="py-5">
+                      <p className="font-display text-base font-medium text-foreground">
+                        {d.title}
+                      </p>
+                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                        <span className="font-mono text-[10px] uppercase tracking-wider text-foreground/60 mr-2">
+                          Why
+                        </span>
+                        {d.why}
+                      </p>
+                      {d.tradeoff && (
+                        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                          <span className="font-mono text-[10px] uppercase tracking-wider text-foreground/60 mr-2">
+                            Tradeoff
+                          </span>
+                          {d.tradeoff}
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </Section>
+            </Reveal>
+          )}
+
+          {/* Approach (also doubles as the build narrative for shallow projects) */}
+          {!p.decisions && (
+            <Reveal delay={0.18}>
+              <Section kicker="02" title="Approach">
+                <ol className="space-y-3">
+                  {p.approach.map((step, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="font-mono text-xs text-muted-foreground pt-1">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <p className="text-muted-foreground leading-relaxed">{step}</p>
+                    </li>
+                  ))}
+                </ol>
+              </Section>
+            </Reveal>
+          )}
+
+          {/* Features */}
+          {p.features && (
+            <Reveal delay={0.2}>
+              <Section kicker="04" title="Features">
+                <div className="grid gap-6 sm:grid-cols-3">
+                  {p.features.map((f) => (
+                    <div key={f.audience} className="rounded-lg border border-border bg-card/60 p-5">
+                      <p className="font-mono text-[10px] uppercase tracking-wider text-foreground">
+                        {f.audience}
+                      </p>
+                      <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                        {f.items.map((it) => (
+                          <li key={it} className="leading-relaxed">— {it}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+            </Reveal>
+          )}
+
+          {/* Challenges */}
+          {p.challenges && p.challenges.length > 0 && (
+            <Reveal delay={0.22}>
+              <Section kicker="05" title="Engineering challenges">
+                <div className="space-y-6">
+                  {p.challenges.map((c) => (
+                    <div key={c.title}>
+                      <p className="font-display text-base font-medium text-foreground">{c.title}</p>
+                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+            </Reveal>
+          )}
+
+          {/* Gallery */}
+          {p.gallery && p.gallery.length > 0 && (
+            <Reveal delay={0.24}>
+              <Section kicker="06" title="Screenshots">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {p.gallery.map((g) => (
+                    <div key={g.src} className="overflow-hidden rounded-lg border border-border bg-muted">
+                      <img src={g.src} alt={g.alt} loading="lazy" className="w-full" />
+                    </div>
+                  ))}
+                </div>
+              </Section>
+            </Reveal>
+          )}
+
+          {/* Stack */}
+          <Reveal delay={0.26}>
+            <Section kicker="07" title="Stack">
+              <ul className="flex flex-wrap gap-2">
+                {p.stack.map((s) => (
+                  <li
+                    key={s}
+                    className="rounded-md border border-border bg-card/60 px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
+                  >
+                    {s}
                   </li>
                 ))}
-              </ol>
-            </section>
+              </ul>
+            </Section>
           </Reveal>
 
-          <Reveal delay={0.3}>
-            <section className="mt-12">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Outcome</p>
-              <h2 className="mt-2 font-display text-2xl">Where it landed.</h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed">{p.outcome}</p>
-            </section>
+          {/* Outcome */}
+          <Reveal delay={0.28}>
+            <Section kicker="08" title="Outcome">
+              <p className="text-muted-foreground leading-relaxed">{p.outcome}</p>
+            </Section>
           </Reveal>
 
-          <Reveal delay={0.35}>
+          {/* Next */}
+          <Reveal delay={0.32}>
             <Link
               to="/projects/$slug"
               params={{ slug: next.slug }}
-              className="mt-16 group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card p-5 hover:border-brand/50 transition"
+              className="mt-20 group flex items-center justify-between gap-4 rounded-lg border border-border bg-card/40 p-5 hover:border-foreground/30 transition"
             >
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
                   Next case study
                 </p>
-                <p className="mt-1 font-display text-lg group-hover:text-brand transition">
+                <p className="mt-1 font-display text-lg group-hover:text-foreground transition">
                   {next.name}
                 </p>
               </div>
-              <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
+              <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
             </Link>
           </Reveal>
         </article>
       </motion.main>
       <Footer />
     </div>
+  );
+}
+
+function Section({
+  kicker,
+  title,
+  children,
+}: {
+  kicker: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mt-16">
+      <div className="flex items-baseline gap-3">
+        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          {kicker}
+        </span>
+        <h2 className="font-display text-2xl font-semibold tracking-tight">{title}</h2>
+      </div>
+      <div className="mt-5">{children}</div>
+    </section>
   );
 }

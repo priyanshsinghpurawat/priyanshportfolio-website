@@ -6,79 +6,58 @@ export function Footer() {
     <footer
       id="contact"
       aria-labelledby="contact-title"
-      className="relative overflow-hidden mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 pt-16 sm:pt-20 pb-10 border-t border-border"
+      className="mx-auto max-w-6xl px-6 pt-24 sm:pt-32 pb-10 border-t border-border/60"
     >
-      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contact</p>
+      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+        Contact
+      </p>
       <h2
         id="contact-title"
-        className="mt-3 font-display text-3xl sm:text-5xl md:text-6xl leading-tight break-words"
+        className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight leading-tight"
+        style={{ letterSpacing: "-0.02em" }}
       >
-        Got an idea? <br />
+        Hiring for a Full Stack role?
+        <br />
         <a
           href="mailto:priyanshsinghpurawatji@gmail.com"
-          className="italic text-brand underline decoration-brand/30 underline-offset-8 hover:decoration-brand transition"
+          className="text-muted-foreground underline decoration-border underline-offset-8 hover:text-foreground hover:decoration-foreground transition"
         >
-          let's talk →
+          Let's talk →
         </a>
       </h2>
 
       <ContactForm />
 
-      <div className="mt-16 grid gap-8 sm:grid-cols-3 text-sm">
+      <div className="mt-20 grid gap-8 sm:grid-cols-3 text-sm">
         <div>
-          <p className="text-xs uppercase tracking-wider text-brand mb-3">Navigate</p>
-          <ul className="space-y-1.5 text-muted-foreground">
-            <li>
-              <Link to="/" className="hover:text-foreground transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/projects" className="hover:text-foreground transition">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link to="/writing" className="hover:text-foreground transition">
-                Writing
-              </Link>
-            </li>
-            <li>
-              <a href="/#about" className="hover:text-foreground transition">
-                About
-              </a>
-            </li>
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+            Navigate
+          </p>
+          <ul className="space-y-1.5 text-muted-foreground font-mono text-xs">
+            <li><Link to="/" className="hover:text-foreground transition">Home</Link></li>
+            <li><Link to="/projects" className="hover:text-foreground transition">Projects</Link></li>
+            <li><Link to="/writing" className="hover:text-foreground transition">Writing</Link></li>
+            <li><a href="/#about" className="hover:text-foreground transition">About</a></li>
           </ul>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-wider text-brand mb-3">Elsewhere</p>
-          <ul className="space-y-1.5 text-muted-foreground">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+            Elsewhere
+          </p>
+          <ul className="space-y-1.5 text-muted-foreground font-mono text-xs">
             <li>
-              <a
-                href="https://github.com/priyanshsinghpurawat"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-foreground transition"
-              >
+              <a href="https://github.com/priyanshsinghpurawat" target="_blank" rel="noreferrer" className="hover:text-foreground transition">
                 GitHub ↗
               </a>
             </li>
             <li>
-              <a
-                href="https://www.linkedin.com/in/priyansh-singh-purawat/"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-foreground transition"
-              >
+              <a href="https://www.linkedin.com/in/priyansh-singh-purawat/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">
                 LinkedIn ↗
               </a>
             </li>
             <li>
-              <a
-                href="mailto:priyanshsinghpurawatji@gmail.com"
-                className="hover:text-foreground transition"
-              >
-                Email
+              <a href="mailto:priyanshsinghpurawatji@gmail.com" className="hover:text-foreground transition">
+                priyanshsinghpurawatji@gmail.com
               </a>
             </li>
             <li>
@@ -89,38 +68,27 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-wider text-brand mb-3">Currently</p>
-          <ul className="space-y-1.5 text-muted-foreground">
-            <li>
-              <span className="text-foreground">Building:</span> Full-Stack Web Products
-            </li>
-            <li>
-              <span className="text-foreground">Learning:</span> Advanced React & Node.js
-              Architecture
-            </li>
-            <li>
-              <span className="text-foreground">Degree:</span> BCA Student
-            </li>
-            <li>
-              <span className="text-foreground">Based in:</span> Jaipur, IN
-            </li>
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+            Currently
+          </p>
+          <ul className="space-y-1.5 text-muted-foreground font-mono text-xs">
+            <li><span className="text-foreground">Building</span> · MERN web products</li>
+            <li><span className="text-foreground">Open to</span> · Full Stack roles, remote or relocation</li>
+            <li><span className="text-foreground">Based in</span> · Jaipur, India</li>
           </ul>
         </div>
       </div>
 
-      {/* Footer Bottom Row */}
-      <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground font-mono">
-        <p>© {new Date().getFullYear()} Priyansh Singh Purawat. Handcrafted with React & Vite.</p>
+      <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+        <p>© {new Date().getFullYear()} Priyansh Singh Purawat</p>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="hover:text-brand transition-colors flex items-center gap-1 group cursor-pointer"
+          aria-label="Back to top"
+          className="hover:text-foreground transition-colors"
         >
-          back_to_top <span className="group-hover:-translate-y-0.5 transition-transform">↑</span>
+          back to top ↑
         </button>
       </div>
-
-      {/* Decorative footer glow */}
-      <div className="absolute bottom-0 right-0 -z-10 size-80 rounded-full bg-brand/5 blur-3xl pointer-events-none" />
     </footer>
   );
 }
