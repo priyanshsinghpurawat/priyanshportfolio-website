@@ -1,54 +1,57 @@
 import { Reveal } from "./reveal";
 
-const skills = [
-  { label: "Languages", items: ["JavaScript (ES6+)", "HTML5", "CSS3"] },
-  { label: "Frontend", items: ["React", "Tailwind", "Framer Motion"] },
-  { label: "Backend", items: ["Node.js", "Express.js", "REST APIs"] },
-  { label: "Databases", items: ["MongoDB", "Mongoose", "MySQL"] },
-  { label: "Tools", items: ["Git", "GitHub", "Netlify", "VS Code"] },
-  { label: "Core", items: ["DSA", "Full Stack Architecture"] },
-];
-
 export function About() {
   return (
     <section
       id="about"
       aria-labelledby="about-title"
-      className="mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 py-10 sm:py-16 border-t border-border"
+      className="mx-auto max-w-6xl px-6 py-24 sm:py-32 border-t border-border/60"
     >
       <Reveal>
-        <div className="grid gap-10 md:grid-cols-[1fr_2fr]">
+        <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">About</p>
-            <h2 id="about-title" className="mt-3 font-display text-3xl sm:text-4xl">
-              A bit <span className="italic text-brand">about me</span>.
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              About
+            </p>
+            <h2
+              id="about-title"
+              className="mt-2 font-display text-3xl sm:text-4xl font-semibold tracking-tight"
+            >
+              About.
             </h2>
           </div>
-          <div className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>
-              I'm a <span className="text-foreground">Full Stack Developer</span> and{" "}
-              <span className="text-foreground">BCA student based in Jaipur</span>, specializing in
-              the <span className="text-foreground">MERN stack</span> with a focus on clean,
-              optimized code. I build responsive web applications end-to-end — from architectural
-              planning to deployment.
-            </p>
-            <p>
-              I care about the small details that make software feel intentional, and I'm dedicated
-              to solving complex logic problems while delivering high-performance interfaces.
-              Outside coursework I dig into Data Structures and ship side projects.
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
-              {skills.map((s) => (
-                <div key={s.label} className="rounded-lg border border-border bg-card p-4">
-                  <p className="text-xs uppercase tracking-wider text-brand mb-2">{s.label}</p>
-                  <ul className="space-y-1 text-sm text-foreground">
-                    {s.items.map((i) => (
-                      <li key={i}>{i}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+          <div className="space-y-10 text-muted-foreground leading-relaxed">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground">
+                What I build
+              </p>
+              <p className="mt-3 text-sm sm:text-base">
+                End-to-end web applications on the MERN stack — from MongoDB schema and
+                Express APIs to React interfaces. Recent work includes MensVibe, a
+                production e-commerce platform with multi-role dashboards, Razorpay
+                payments, Redis-cached product reads, and Socket.io notifications.
+              </p>
+            </div>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground">
+                How I work
+              </p>
+              <p className="mt-3 text-sm sm:text-base">
+                Design the data model first, expose a versioned REST surface, then
+                build UI against it. Validate inputs with Zod, enforce auth with JWT
+                and role-based access, and keep the hot path measurable. Ship to
+                Vercel and Render, monitor what breaks, iterate.
+              </p>
+            </div>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground">
+                What I'm looking for
+              </p>
+              <p className="mt-3 text-sm sm:text-base">
+                A Full Stack or Backend role on a small, shipping team where I can own
+                features end-to-end and learn from engineers who care about
+                correctness as much as velocity. Remote or relocation, both fine.
+              </p>
             </div>
           </div>
         </div>

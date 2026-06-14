@@ -1,40 +1,37 @@
-# Priyansh Singh Purawat — Full Stack Developer
+# Priyansh Singh Purawat — Full Stack Developer (MERN)
 
-> Portfolio of Priyansh Singh Purawat, a full-stack developer and BCA student based in Jaipur, India, specializing in the MERN stack (MongoDB, Express, React, Node.js) and modern full-stack web development. Available for freelance and full-time work.
+> Full Stack Developer based in Jaipur, India. Building scalable web applications with React, Node.js, Express, and MongoDB. Open to remote and relocation.
 
-Priyansh builds responsive, end-to-end web applications using React, Node.js, TypeScript, Tailwind CSS, and modern JavaScript tooling. He focuses on clean architecture, accessible UI, and shipping real products from database to deployment.
+Priyansh ships end-to-end MERN applications — REST APIs, JWT auth, role-based access control, MongoDB schema design, Redis caching, Razorpay payments, deployment on Vercel and Render.
 
 ## Pages
-- [Home](/): Hero intro, full-stack overview, MERN expertise, about, selected projects, contact form
+- [Home](/): Hero, featured case study (MensVibe), skills, about, work experience, other work, contact.
+- [MensVibe case study](/projects/ecommerce-mern): Production MERN e-commerce platform, multi-role dashboards.
 
 ## Skills
-- Frontend: React, Next.js, TypeScript, Tailwind CSS, Framer Motion, HTML5, CSS3, modern JavaScript (ES2022+)
-- Backend: Node.js, Express.js, REST APIs, JWT authentication, server-side validation
-- Database: MongoDB, Mongoose, PostgreSQL, SQL fundamentals
-- DevOps & tooling: Git, GitHub, Vercel, Vite, npm/bun, environment management
-- Practices: responsive mobile-first design, accessibility (WCAG), SEO, performance optimization, component-driven UI
 
-## Projects
-- Full Stack E-Commerce — React + Node/Express + MongoDB + JWT auth + payment integration. In progress. https://github.com/priyanshsinghpurawat
-- Aspect Ratio Calculator — Vanilla HTML/CSS/JS utility for screen resolution and aspect ratio conversion. https://github.com/priyanshsinghpurawat
-- Notes Taking App — Vanilla JS notes app with localStorage persistence (create, save, delete). https://priyanshsinghpurawat.github.io/Notes-APP/
-- Exchange Rate App — Real-time currency converter using live exchange-rate API. https://priyanshsinghpurawat.github.io/Exchange-Rate/
+### Frontend Engineering
+React, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap, Framer Motion, Vite
+
+### Backend Engineering
+Node.js, Express.js, MongoDB, MySQL, REST APIs, JWT, Role-Based Access Control, Cloudinary, Git, GitHub, Postman, Vercel, Render
+
+## Featured project
+- MensVibe — Production MERN e-commerce platform. React 19, Node, Express, MongoDB, Redis cache, Socket.io real-time, Razorpay payments, Cloudinary uploads, JWT + Google OAuth, Zod validation, Admin/Seller/Buyer roles. https://github.com/priyanshsinghpurawat
+
+## Other work
+- Aspect Ratio Calculator — vanilla JS utility, <10KB. https://github.com/priyanshsinghpurawat
+- Notes App — localStorage CRUD demo. https://priyanshsinghpurawat.github.io/Notes-APP/
+- Exchange Rate App — REST API consumption demo. https://priyanshsinghpurawat.github.io/Exchange-Rate/
 
 ## Education
 - Bachelor of Computer Applications (BCA) — Jaipur, India (current)
-
-## Focus areas
-- Full-stack web development (frontend, backend, database, DevOps)
-- MERN stack: MongoDB, Express.js, React, Node.js
-- TypeScript, Tailwind CSS, modern React (hooks, suspense, server components)
-- REST APIs, authentication, deployment on Vercel and similar platforms
 
 ## Contact
 - Email: priyanshsinghpurawatji@gmail.com
 - Phone: +91 94601 77215
 - GitHub: https://github.com/priyanshsinghpurawat
 - LinkedIn: https://www.linkedin.com/in/priyansh-singh-purawat/
-- Contact form: /#contact
 
 ## Optional
 - [Full bio and project details](/llms-full.txt)

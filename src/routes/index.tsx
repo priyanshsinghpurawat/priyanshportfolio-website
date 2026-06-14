@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/header";
 import { motion } from "framer-motion";
 import { Hero } from "@/components/hero";
-import { FullStack } from "@/components/fullstack";
+import { FeaturedCaseStudy } from "@/components/featured-case-study";
+import { SkillsGrid } from "@/components/skills-grid";
 import { About } from "@/components/about";
-import { SkillsMarquee } from "@/components/skills-marquee";
-import { Experience } from "@/components/experience";
 import { WorkExperience } from "@/components/work-experience";
+import { OtherWork } from "@/components/other-work";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import ogImage from "@/assets/og-image.jpg";
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "Priyansh Singh, Priyansh Singh Purawat, full stack developer, MERN developer, React developer, Node.js, Jaipur developer, web developer portfolio",
+          "Priyansh Singh, Priyansh Singh Purawat, full stack developer, MERN developer, React developer, Node.js, Express, MongoDB, Jaipur developer, web developer portfolio",
       },
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESCRIPTION },
@@ -63,10 +63,12 @@ export const Route = createFileRoute("/")({
             "Node.js",
             "Express.js",
             "MongoDB",
-            "TypeScript",
-            "Tailwind CSS",
             "REST APIs",
             "JWT Authentication",
+            "Role-Based Access Control",
+            "Redis",
+            "Razorpay",
+            "Tailwind CSS",
           ],
           sameAs: [
             "https://github.com/priyanshsinghpurawat",
@@ -97,11 +99,11 @@ function Index() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <Hero />
-        <SkillsMarquee />
-        <FullStack />
+        <FeaturedCaseStudy />
+        <SkillsGrid />
         <About />
         <WorkExperience />
-        <Experience />
+        <OtherWork />
       </motion.main>
       <Footer />
     </div>
