@@ -69,6 +69,22 @@ app.post("/api/contact", async (req, res) => {
     });
   }
 
+  // Server-side length validation (client-side maxLength can be bypassed)
+  if (
+    typeof name !== "string" ||
+    typeof email !== "string" ||
+    typeof message !== "string" ||
+    name.length > 100 ||
+    email.length > 255 ||
+    message.length > 2000
+  ) {
+    return res.status(400).json({
+      success: false,
+      message: "Input exceeds allowed length or has invalid type.",
+    });
+  }
+
+
   // Simple email regex validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
