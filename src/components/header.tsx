@@ -70,7 +70,7 @@ export function Header() {
           to="/"
           className="font-display text-lg tracking-tight shrink-0 flex items-center gap-2 hover:opacity-80 transition"
         >
-          <span className="size-2 rounded-full bg-brand animate-pulse shadow-[0_0_8px_var(--color-brand)]" />
+          <span className="size-2 rounded-full bg-brand motion-safe:animate-pulse shadow-[0_0_8px_var(--color-brand)]" />
           priyansh<span className="text-brand">.</span>
         </Link>
 

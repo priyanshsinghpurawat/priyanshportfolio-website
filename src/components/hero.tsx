@@ -1,6 +1,8 @@
 import { ArrowUpRight, Github, FileText } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import portrait from "@/assets/portrait.png";
+import portraitAvif from "@/assets/portrait.png?format=avif&quality=70&w=896&imagetools";
+import portraitWebp from "@/assets/portrait.png?format=webp&quality=75&w=896&imagetools";
+import portraitFallback from "@/assets/portrait.png?format=jpg&quality=80&w=896&imagetools";
 import {
   ROLE,
   ONE_LINER,
@@ -84,15 +86,19 @@ export function Hero() {
 
         <div className="relative order-first lg:order-last">
           <div className="relative mx-auto lg:mx-0 lg:ml-auto w-56 sm:w-72 lg:w-full max-w-sm">
-            <img
-              src={portrait}
-              alt={`Portrait of ${ROLE} Priyansh Singh Purawat`}
-              width={896}
-              height={1152}
-              className="relative rounded-2xl border border-border bg-card"
-              loading="eager"
-              fetchPriority="high"
-            />
+            <picture>
+              <source type="image/avif" srcSet={portraitAvif} />
+              <source type="image/webp" srcSet={portraitWebp} />
+              <img
+                src={portraitFallback}
+                alt={`Portrait of ${ROLE} Priyansh Singh Purawat`}
+                width={896}
+                height={1152}
+                className="relative rounded-2xl border border-border bg-card"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </picture>
           </div>
         </div>
       </div>

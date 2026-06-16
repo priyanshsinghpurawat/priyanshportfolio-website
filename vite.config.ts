@@ -4,12 +4,14 @@ import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import Sitemap from "vite-plugin-sitemap";
+import { imagetools } from "vite-imagetools";
 
 export default defineConfig({
   plugins: [
     tanstackRouter({ target: "react", autoCodeSplitting: true }),
     react(),
     tailwindcss(),
+    imagetools(),
     tsconfigPaths(),
     Sitemap({
       hostname: "https://priyanshsinghpurawat.github.io", // Adjust this later when the domain is final

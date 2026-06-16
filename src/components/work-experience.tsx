@@ -24,15 +24,15 @@ const jobs: Job[] = [
 export function WorkExperience() {
   return (
     <section
-      id="work"
-      aria-labelledby="work-title"
+      id="experience"
+      aria-labelledby="experience-title"
       className="mx-auto max-w-[1750px] px-6 sm:px-12 md:px-16 py-10 sm:py-16 border-t border-border"
     >
       <Reveal>
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
           Professional Journey
         </p>
-        <h2 id="work-title" className="mt-3 font-display text-3xl sm:text-4xl">
+        <h2 id="experience-title" className="mt-3 font-display text-3xl sm:text-4xl">
           Where I've <span className="italic text-brand">worked</span>.
         </h2>
       </Reveal>
