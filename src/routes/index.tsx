@@ -91,9 +91,16 @@ function Index() {
         <meta name="description" content={SITE_DESCRIPTION} />
         <link rel="canonical" href={SITE_URL + "/"} />
       </Helmet>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-foreground focus:text-background focus:px-3 focus:py-2 focus:font-mono focus:text-sm"
+      >
+        Skip to content
+      </a>
       <ScrollProgress />
       <Header />
       <motion.main
+        id="main"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

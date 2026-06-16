@@ -18,12 +18,28 @@
 
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="/" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0fbf9" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d1117" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
     <meta property="og:title" content="Priyansh Singh Purawat — Full Stack Developer (MERN)" />
     <meta name="twitter:title" content="Priyansh Singh Purawat — Full Stack Developer (MERN)" />
     <meta
