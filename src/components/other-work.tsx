@@ -42,7 +42,7 @@ export function OtherWork() {
                       {p.name}
                     </p>
                     <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                      {p.year} · {p.stack.slice(0, 3).join(" · ")}
+                      {p.year} · {p.stack.slice(0, 3).join(" · ").toUpperCase()}
                     </p>
                   </div>
                   <p className="hidden sm:block text-sm text-muted-foreground">{p.tagline}</p>
