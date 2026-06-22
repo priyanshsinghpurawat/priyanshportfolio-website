@@ -68,6 +68,36 @@
   --mern-n: #009f93;
 }
 
+/* EVENING — warm cream & burgundy
+   #faedcd #6f1d1b */
+.evening {
+  --background: #faedcd;
+  --foreground: #5c1816;
+  --card: #f5e0b8;
+  --card-foreground: #5c1816;
+  --popover: #f5e0b8;
+  --popover-foreground: #5c1816;
+  --primary: #6f1d1b;
+  --primary-foreground: #faedcd;
+  --secondary: #e8d5a8;
+  --secondary-foreground: #5c1816;
+  --muted: #e8d5a8;
+  --muted-foreground: #8a3a38;
+  --accent: #f0d4a0;
+  --accent-foreground: #5c1816;
+  --destructive: #991b1b;
+  --destructive-foreground: #faedcd;
+  --border: #6f1d1b / 25%;
+  --input: #e8d5a8;
+  --ring: #6f1d1b;
+  --brand: #6f1d1b;
+  --brand-foreground: #faedcd;
+  --mern-m: #a94442;
+  --mern-e: #8a3a38;
+  --mern-r: #b54b49;
+  --mern-n: #7a2e2c;
+}
+
 .dark {
   --background: oklch(0.16 0.01 280);
   --foreground: oklch(0.96 0.005 280);
