@@ -68,36 +68,6 @@
   --mern-n: #009f93;
 }
 
-/* EVENING — burgundy background & warm cream text
-   #6f1d1b #faedcd */
-.evening {
-  --background: #6f1d1b;
-  --foreground: #faedcd;
-  --card: #5c1816;
-  --card-foreground: #faedcd;
-  --popover: #5c1816;
-  --popover-foreground: #faedcd;
-  --primary: #faedcd;
-  --primary-foreground: #6f1d1b;
-  --secondary: #7a2e2c;
-  --secondary-foreground: #faedcd;
-  --muted: #7a2e2c;
-  --muted-foreground: #e8d5a8;
-  --accent: #8a3a38;
-  --accent-foreground: #faedcd;
-  --destructive: #991b1b;
-  --destructive-foreground: #faedcd;
-  --border: #faedcd / 25%;
-  --input: #7a2e2c;
-  --ring: #faedcd;
-  --brand: #faedcd;
-  --brand-foreground: #6f1d1b;
-  --mern-m: #f0d4a0;
-  --mern-e: #e8d5a8;
-  --mern-r: #f5e0b8;
-  --mern-n: #e0c090;
-}
-
 .dark {
   --background: oklch(0.16 0.01 280);
   --foreground: oklch(0.96 0.005 280);
