@@ -54,9 +54,9 @@ const backend: Skill[] = [
 
 function Chip({ Icon, name }: Skill) {
   return (
-    <li className="group flex items-center gap-2.5 rounded-lg border border-border bg-card/60 px-3.5 py-2.5 transition-colors hover:border-foreground/30">
-      <Icon className="size-4 text-muted-foreground group-hover:text-foreground transition-colors" aria-hidden="true" />
-      <span className="font-mono text-xs text-foreground">{name}</span>
+    <li className="group flex items-center gap-2.5 rounded-lg border border-border bg-card/60 px-4 py-2.5 transition-colors hover:border-foreground/30">
+      <Icon className="size-[1.05rem] text-muted-foreground group-hover:text-foreground transition-colors" aria-hidden="true" />
+      <span className="font-mono text-sm text-foreground">{name}</span>
     </li>
   );
 }
@@ -64,11 +64,11 @@ function Chip({ Icon, name }: Skill) {
 function Column({ title, kicker, items }: { title: string; kicker: string; items: Skill[] }) {
   return (
     <div>
-      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+      <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
         {kicker}
       </p>
-      <h3 className="mt-2 font-display text-xl font-semibold tracking-tight">{title}</h3>
-      <ul className="mt-5 flex flex-wrap gap-2">
+      <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">{title}</h3>
+      <ul className="mt-5 flex flex-wrap gap-2.5">
         {items.map((s) => (
           <Chip key={s.name} {...s} />
         ))}
