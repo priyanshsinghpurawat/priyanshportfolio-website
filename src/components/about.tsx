@@ -1,54 +1,55 @@
-import { motion } from "framer-motion";
-
-const skills = [
-  { label: "Languages", items: ["JavaScript (ES6+)", "HTML5", "CSS3"] },
-  { label: "Frontend", items: ["React", "Responsive UI", "DOM"] },
-  { label: "Backend", items: ["Node.js", "Express.js"] },
-  { label: "Databases", items: ["MongoDB", "MySQL"] },
-  { label: "Tools", items: ["Git", "GitHub", "Netlify", "VS Code"] },
-  { label: "Core", items: ["DSA", "Full Stack Architecture"] },
-];
+import { Reveal } from "./reveal";
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-5xl px-6 py-24 border-t border-border overflow-hidden">
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="grid gap-12 md:grid-cols-[1fr_2fr]"
-      >
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">About</p>
-          <h2 className="mt-3 font-display text-3xl">A bit about me.</h2>
-        </div>
-        <div className="space-y-6 text-muted-foreground leading-relaxed">
-          <p>
-            I'm a <span className="text-foreground">Full Stack Developer</span> and{" "}
-            <span className="text-foreground">BCA student at JECRC, Jaipur</span>, specializing in
-            the <span className="text-foreground">MERN stack</span> with a focus on clean,
-            optimized code. I build responsive web applications end-to-end — from architectural
-            planning to deployment.
-          </p>
-          <p>
-            I care about the small details that make software feel intentional, and I'm dedicated
-            to solving complex logic problems while delivering high-performance interfaces.
-            Outside coursework I dig into Data Structures and ship side projects.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6">
-            {skills.map((s) => (
-              <div key={s.label} className="rounded-lg border border-border bg-card p-4">
-                <p className="text-xs uppercase tracking-wider text-brand mb-2">{s.label}</p>
-                <ul className="space-y-1 text-sm text-foreground">
-                  {s.items.map((i) => <li key={i}>{i}</li>)}
-                </ul>
-              </div>
-            ))}
+    <section
+      id="about"
+      aria-labelledby="about-title"
+      className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-24 sm:py-32 border-t border-border/50"
+    >
+      <Reveal>
+        <div className="grid gap-12 lg:grid-cols-[1fr_2fr] items-start">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-medium">
+              Background
+            </p>
+            <h2
+              id="about-title"
+              className="mt-2 font-display text-3xl sm:text-5xl font-bold tracking-tight text-foreground"
+            >
+              Engineering Philosophy.
+            </h2>
+          </div>
+          <div className="grid gap-6 text-muted-foreground leading-relaxed">
+            <div className="p-6 rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-semibold">
+                What I build
+              </p>
+              <p className="mt-3 text-sm sm:text-base text-foreground/80 leading-relaxed">
+                End-to-end web applications on the MERN stack — from MongoDB schema design and
+                Express RESTful APIs to high-performance React user interfaces. Key production work includes MensVibe (multi-role e-commerce with Razorpay and Redis) and JobDekho (HRMS job portal with JWT auth and Cloudinary).
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-semibold">
+                How I work
+              </p>
+              <p className="mt-3 text-sm sm:text-base text-foreground/80 leading-relaxed">
+                Model domain data cleanly first, build typed and versioned RESTful surfaces, then craft intuitive interfaces. Validate inputs with Zod, enforce strict role-based access (RBAC) with JWT, and keep read paths fast with read-through caching.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-semibold">
+                What I'm looking for
+              </p>
+              <p className="mt-3 text-sm sm:text-base text-foreground/80 leading-relaxed">
+                Full Stack, Software Engineer, or Backend roles in fast-moving engineering teams where I can take ownership of features, solve real business problems, and push clean code to production.
+              </p>
+            </div>
           </div>
         </div>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }
+

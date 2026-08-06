@@ -1,0 +1,81 @@
+# Priyansh Singh Purawat — Full Stack Developer (Full Profile)
+
+> Extended profile for AI crawlers. Plain-text markdown for ingestion without JS parsing.
+
+## About
+
+Priyansh Singh Purawat is a Full Stack Developer based in Jaipur, India. He builds production-grade web applications across the MERN stack — MongoDB, Express.js, React, and Node.js — with a focus on REST API design, authentication and authorization, schema design, caching, and deployment.
+
+Open to Full Stack and Backend roles. Remote worldwide or relocation, both fine.
+
+## Core Expertise
+
+### Frontend Engineering
+- React (hooks, suspense, modern patterns)
+- JavaScript (ES2022+)
+- HTML5, CSS3
+- Tailwind CSS, Bootstrap
+- Framer Motion
+- Vite
+- Responsive, mobile-first design
+- Accessibility (semantic HTML, ARIA, keyboard navigation)
+
+### Backend Engineering
+- Node.js, Express.js
+- REST API design and versioning
+- JWT authentication, Google OAuth
+- Role-Based Access Control (RBAC)
+- Zod schema validation
+- Helmet, rate limiting, security hardening
+- Error handling and structured logging
+- WebSockets / Socket.io for real-time
+
+### Database
+- MongoDB with Mongoose ODM (schema design, indexing, transactions)
+- MySQL fundamentals
+- Redis for read-through caching
+
+### Tooling & DevOps
+- Git, GitHub workflows
+- Postman for API design and contract testing
+- Cloudinary for media
+- Vercel (frontend) and Render (services) deployment
+
+## Featured Project
+
+### MensVibe — Production MERN E-Commerce Platform
+A boutique fashion platform with three distinct user workflows: Admin moderation, Seller inventory/coupon management, and Buyer checkout.
+
+- Frontend: React 19, Vite, Tailwind CSS 4, Framer Motion, React Router 7, React Hook Form
+- Backend: Node.js, Express.js, MongoDB, Mongoose, Redis, Socket.io
+- Security & Services: JWT, Google OAuth, Zod validation, Razorpay payments, Cloudinary uploads, Helmet, rate limiting
+- Architecture decisions:
+  - Read-through Redis cache on product listings — single-digit ms reads on the hot path. Tradeoff: eventual consistency on stock counts, cache invalidated on writes.
+  - Single users collection with a role discriminator — keeps auth simple, avoids JOINs in Mongo.
+  - Zod schemas at the API boundary — bad input becomes 400, not 500.
+  - Socket.io for dashboards — sellers/admins keep dashboards open for hours; polling burned bandwidth.
+- Engineering challenges solved:
+  - Stock race conditions at checkout solved with MongoDB transactions and `$inc` with `$gte` guard.
+  - Cache invalidation centralized in a repository layer so all write paths invalidate consistently.
+  - Razorpay webhook idempotency via unique payment IDs on the orders collection.
+- Repo: https://github.com/priyanshsinghpurawat
+
+## Other Work
+- Aspect Ratio Calculator — vanilla HTML/CSS/JS, <10KB. https://github.com/priyanshsinghpurawat
+- Notes App — vanilla JS + localStorage CRUD. https://priyanshsinghpurawat.github.io/Notes-APP/
+- Exchange Rate App — live REST API consumption. https://priyanshsinghpurawat.github.io/Exchange-Rate/
+
+## Education
+- Bachelor of Computer Applications (BCA) — Jaipur, India (current student)
+
+## Location & Availability
+- Based in Jaipur, Rajasthan, India
+- Open to: Full Stack and Backend roles, remote worldwide, relocation
+- Available for: full-time, internship, freelance
+
+## Contact
+- Email: priyanshsinghpurawatji@gmail.com
+- Phone: +91 94601 77215
+- GitHub: https://github.com/priyanshsinghpurawat
+- LinkedIn: https://www.linkedin.com/in/priyansh-singh-purawat/
+- Portfolio contact form: /#contact

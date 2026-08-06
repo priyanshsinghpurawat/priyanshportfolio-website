@@ -30,9 +30,11 @@
   --color-ring: var(--ring);
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'League Spartan', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 /* LIGHT MODE — teal palette
@@ -45,7 +47,7 @@
   --card-foreground: oklch(0.25 0.04 185);
   --popover: oklch(0.985 0.012 185);
   --popover-foreground: oklch(0.25 0.04 185);
-  --primary: oklch(0.50 0.09 190);
+  --primary: oklch(0.5 0.09 190);
   --primary-foreground: oklch(0.985 0.012 185);
   --secondary: oklch(0.93 0.03 185);
   --secondary-foreground: oklch(0.25 0.04 185);
@@ -59,19 +61,19 @@
   --input: oklch(0.85 0.04 188);
   --ring: oklch(0.65 0.12 188);
   --brand: oklch(0.68 0.13 188);
-  --brand-foreground: oklch(0.20 0.04 185);
-  --mern-m: #00B9AE;
+  --brand-foreground: oklch(0.2 0.04 185);
+  --mern-m: #00b9ae;
   --mern-e: #037171;
-  --mern-r: #02C3BD;
-  --mern-n: #009F93;
+  --mern-r: #02c3bd;
+  --mern-n: #009f93;
 }
 
 .dark {
   --background: oklch(0.16 0.01 280);
   --foreground: oklch(0.96 0.005 280);
-  --card: oklch(0.20 0.01 280);
+  --card: oklch(0.2 0.01 280);
   --card-foreground: oklch(0.96 0.005 280);
-  --popover: oklch(0.20 0.01 280);
+  --popover: oklch(0.2 0.01 280);
   --popover-foreground: oklch(0.96 0.005 280);
   --primary: oklch(0.96 0.005 280);
   --primary-foreground: oklch(0.16 0.01 280);
@@ -92,12 +94,85 @@
   --mern-n: #0077b6;
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ============ Infinite marquee ============ */
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  animation: marquee-x var(--marquee-duration, 60s) linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.marquee-track > * {
+  flex: 0 0 auto;
+}
+
+/* Pause: desktop hover, mobile touch-hold, keyboard focus */
+.marquee-wrapper:hover .marquee-track,
+.marquee-wrapper:active .marquee-track,
+.marquee-wrapper:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+@media (max-width: 640px) {
+  .marquee-track {
+    --marquee-duration: 90s;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    transform: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .marquee-track > * {
+    scroll-snap-align: center;
+  }
 }
 
 section[id] {
   scroll-margin-top: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="marquee-x"] {
+    animation: none !important;
+  }
 }
 
 @layer base {
@@ -109,6 +184,18 @@ section[id] {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-feature-settings:
+      "calt" 1,
+      "liga" 1,
+      "ss01",
+      "ss02",
+      "ss03";
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
+
