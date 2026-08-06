@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
-import { Reveal } from "./reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 export function OtherWork() {
   const others = projects.filter((p) => !["ecommerce-mern", "jobdekho"].includes(p.slug));

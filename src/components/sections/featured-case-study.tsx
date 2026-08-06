@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { getProject, Project } from "@/data/projects";
-import { Reveal } from "./reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 export function FeaturedCaseStudy() {
   const featuredSlugs = ["ecommerce-mern", "jobdekho"];

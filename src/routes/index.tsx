@@ -1,14 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Header } from "@/components/header";
-import { motion } from "framer-motion";
-import { Hero } from "@/components/hero";
-import { FeaturedCaseStudy } from "@/components/featured-case-study";
-import { SkillsGrid } from "@/components/skills-grid";
-import { About } from "@/components/about";
-import { WorkExperience } from "@/components/work-experience";
-import { OtherWork } from "@/components/other-work";
-import { TechMarquee } from "@/components/tech-marquee";
-import { Footer } from "@/components/footer";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { Hero } from "@/components/sections/hero";
+import { FeaturedCaseStudy } from "@/components/sections/featured-case-study";
+import { SkillsGrid } from "@/components/sections/skills-grid";
+import { About } from "@/components/sections/about";
+import { WorkExperience } from "@/components/sections/work-experience";
+import { OtherWork } from "@/components/sections/other-work";
+import { TechMarquee } from "@/components/sections/tech-marquee";
 import ogImage from "@/assets/og-image.jpg";
 
 import { SITE_URL, AUTHOR_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/constants";

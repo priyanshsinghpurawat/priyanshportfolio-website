@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { ProjectCard } from "@/components/project-card";
-import { Reveal } from "@/components/reveal";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { ProjectCard } from "@/components/ui/project-card";
+import { Reveal } from "@/components/ui/reveal";
 import { projects } from "@/data/projects";
 
 import { SITE_URL } from "@/lib/constants";

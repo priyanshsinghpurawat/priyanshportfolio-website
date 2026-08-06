@@ -3,31 +3,9 @@ import jobdekhoImg from "@/assets/project-jobdekho.png";
 import aspectImg from "@/assets/project-aspect.jpg";
 import notesImg from "@/assets/project-notes.jpg";
 import exchangeImg from "@/assets/project-exchange.jpg";
+import type { Project } from "@/types";
 
-export type Decision = { title: string; why: string; tradeoff?: string };
-export type Challenge = { title: string; body: string };
-
-export type Project = {
-  slug: string;
-  name: string;
-  tagline: string;
-  role: string;
-  stack: string[];
-  status?: "In Progress" | "Shipped" | "Live";
-  year: string;
-  cover: string;
-  metric: string;
-  problem: string;
-  approach: string[];
-  outcome: string;
-  links: { github?: string; live?: string; server?: string };
-  // Case-study extensions (optional — only the featured project fills these)
-  architecture?: string[];
-  decisions?: Decision[];
-  challenges?: Challenge[];
-  features?: { audience: string; items: string[] }[];
-  gallery?: { src: string; alt: string }[];
-};
+export type { Project, Decision, Challenge } from "@/types";
 
 export const projects: Project[] = [
   {

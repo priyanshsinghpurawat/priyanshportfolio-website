@@ -1,5 +1,5 @@
 import { Briefcase, Calendar } from "lucide-react";
-import { Reveal } from "./reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 type Job = {
   company: string;

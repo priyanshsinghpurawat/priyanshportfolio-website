@@ -1,11 +1,6 @@
-export type Post = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readingTime: string;
-  body: string[]; // paragraphs
-};
+import type { Post } from "@/types";
+
+export type { Post } from "@/types";
 
 export const posts: Post[] = [
   {

@@ -1,4 +1,4 @@
-import { Reveal } from "./reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 export function About() {
   return (

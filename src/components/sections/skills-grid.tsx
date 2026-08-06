@@ -21,7 +21,7 @@ import {
 } from "react-icons/si";
 import { Shield, Network } from "lucide-react";
 import type { IconType } from "react-icons";
-import { Reveal } from "./reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 type Skill = { name: string; Icon: IconType | React.ComponentType<React.SVGProps<SVGSVGElement>> };
 

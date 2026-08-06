@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ContactForm } from "./contact-ui";
-import { LiveClock } from "./live-clock";
+import { ContactForm } from "@/components/sections/contact-ui";
+import { LiveClock } from "@/components/ui/live-clock";
 
 export function Footer() {
   return (

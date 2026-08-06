@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Github, Linkedin, Mail, Menu } from "lucide-react";
-import { ThemeToggle } from "./theme-toggle";
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "./ui/sheet";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 type NavLink =
   | { kind: "route"; to: "/" | "/projects" | "/writing"; label: string }
