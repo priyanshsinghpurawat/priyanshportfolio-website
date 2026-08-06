@@ -85,7 +85,6 @@ app.post("/api/contact", async (req, res) => {
     });
   }
 
-
   // Simple email regex validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {

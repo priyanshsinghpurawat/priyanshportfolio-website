@@ -32,7 +32,10 @@ export function WorkExperience() {
         <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-medium">
           Professional Journey
         </p>
-        <h2 id="experience-title" className="mt-2 font-display text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
+        <h2
+          id="experience-title"
+          className="mt-2 font-display text-3xl sm:text-5xl font-bold tracking-tight text-foreground"
+        >
           Work Experience.
         </h2>
       </Reveal>
@@ -75,4 +78,3 @@ export function WorkExperience() {
     </section>
   );
 }
-

@@ -266,8 +266,7 @@ export const projects: Project[] = [
     year: "2024",
     cover: notesImg,
     metric: "Survives refresh · 0 backend",
-    problem:
-      "Wanted to internalize CRUD against the DOM before reaching for React abstractions.",
+    problem: "Wanted to internalize CRUD against the DOM before reaching for React abstractions.",
     approach: [
       "DOM-driven create/read/update/delete loop.",
       "localStorage persistence so notes survive a reload.",
@@ -295,7 +294,8 @@ export const projects: Project[] = [
       "Two-currency UI with swap button.",
       "Responsive-first as a mobile lookup tool.",
     ],
-    outcome: "A tiny app I actually use. Taught me the patterns I reach for in every data-fetching hook.",
+    outcome:
+      "A tiny app I actually use. Taught me the patterns I reach for in every data-fetching hook.",
     links: {
       github: "https://github.com/priyanshsinghpurawat",
       live: "https://priyanshsinghpurawat.github.io/Exchange-Rate/",

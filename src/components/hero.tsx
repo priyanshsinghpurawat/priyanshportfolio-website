@@ -3,14 +3,7 @@ import { Link } from "@tanstack/react-router";
 import portraitAvif from "@/assets/portrait.png?format=avif&quality=70&w=896&imagetools";
 import portraitWebp from "@/assets/portrait.png?format=webp&quality=75&w=896&imagetools";
 import portraitFallback from "@/assets/portrait.png?format=jpg&quality=80&w=896&imagetools";
-import {
-  ROLE,
-  ONE_LINER,
-  SUB_LINE,
-  LOCATION,
-  METRICS,
-  GITHUB_URL,
-} from "@/lib/constants";
+import { ROLE, ONE_LINER, SUB_LINE, LOCATION, METRICS, GITHUB_URL } from "@/lib/constants";
 
 export function Hero() {
   return (
@@ -118,4 +111,3 @@ export function Hero() {
     </section>
   );
 }
-

@@ -39,7 +39,7 @@ export function ProjectCard({ p, priority = false }: { p: Project; priority?: bo
           <ArrowUpRight className="size-5 shrink-0 text-muted-foreground group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </div>
         <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>
-        
+
         <div className="mt-5 flex flex-wrap gap-1.5">
           {p.stack.slice(0, 5).map((s) => (
             <span
@@ -50,7 +50,7 @@ export function ProjectCard({ p, priority = false }: { p: Project; priority?: bo
             </span>
           ))}
         </div>
-        
+
         <div className="mt-5 pt-4 border-t border-border/40 flex flex-wrap gap-1.5">
           {p.metric.split("·").map((m, idx) => (
             <span
@@ -65,4 +65,3 @@ export function ProjectCard({ p, priority = false }: { p: Project; priority?: bo
     </Link>
   );
 }
-

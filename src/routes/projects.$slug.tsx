@@ -144,7 +144,13 @@ function ProjectDetail() {
           {/* Cover */}
           <Reveal delay={0.08}>
             <div className="mt-12 overflow-hidden rounded-xl border border-border bg-muted">
-              <img src={p.cover} alt={`${p.name} cover`} width={1280} height={800} className="w-full" />
+              <img
+                src={p.cover}
+                alt={`${p.name} cover`}
+                width={1280}
+                height={800}
+                className="w-full"
+              />
             </div>
           </Reveal>
 
@@ -221,13 +227,18 @@ function ProjectDetail() {
               <Section kicker="04" title="Features">
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {p.features.map((f) => (
-                    <div key={f.audience} className="rounded-lg border border-border bg-card/60 p-5">
+                    <div
+                      key={f.audience}
+                      className="rounded-lg border border-border bg-card/60 p-5"
+                    >
                       <p className="font-mono text-[10px] uppercase tracking-wider text-foreground">
                         {f.audience}
                       </p>
                       <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                         {f.items.map((it) => (
-                          <li key={it} className="leading-relaxed">— {it}</li>
+                          <li key={it} className="leading-relaxed">
+                            — {it}
+                          </li>
                         ))}
                       </ul>
                     </div>
@@ -244,7 +255,9 @@ function ProjectDetail() {
                 <div className="space-y-6">
                   {p.challenges.map((c) => (
                     <div key={c.title}>
-                      <p className="font-display text-base font-medium text-foreground">{c.title}</p>
+                      <p className="font-display text-base font-medium text-foreground">
+                        {c.title}
+                      </p>
                       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.body}</p>
                     </div>
                   ))}
@@ -259,7 +272,10 @@ function ProjectDetail() {
               <Section kicker="06" title="Screenshots">
                 <div className="grid gap-4 sm:grid-cols-2">
                   {p.gallery.map((g) => (
-                    <div key={g.src} className="overflow-hidden rounded-lg border border-border bg-muted">
+                    <div
+                      key={g.src}
+                      className="overflow-hidden rounded-lg border border-border bg-muted"
+                    >
                       <img src={g.src} alt={g.alt} loading="lazy" className="w-full" />
                     </div>
                   ))}

@@ -30,12 +30,15 @@ function WritingPage() {
       <Header />
       <main className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-16 sm:py-24">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-medium">Articles & Notes</p>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-medium">
+            Articles & Notes
+          </p>
           <h1 className="mt-2 font-display text-4xl sm:text-6xl font-bold tracking-tight text-foreground">
             Writing & Engineering Thoughts.
           </h1>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">
-            Technical notes on full-stack architecture, MERN performance optimizations, and lessons learned building products.
+            Technical notes on full-stack architecture, MERN performance optimizations, and lessons
+            learned building products.
           </p>
         </Reveal>
 

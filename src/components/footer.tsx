@@ -35,10 +35,26 @@ export function Footer() {
             Navigate
           </p>
           <ul className="space-y-1.5 text-muted-foreground font-mono text-xs">
-            <li><Link to="/" className="hover:text-foreground transition">Home</Link></li>
-            <li><Link to="/projects" className="hover:text-foreground transition">Projects</Link></li>
-            <li><Link to="/writing" className="hover:text-foreground transition">Writing</Link></li>
-            <li><a href="/#about" className="hover:text-foreground transition">About</a></li>
+            <li>
+              <Link to="/" className="hover:text-foreground transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/projects" className="hover:text-foreground transition">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/writing" className="hover:text-foreground transition">
+                Writing
+              </Link>
+            </li>
+            <li>
+              <a href="/#about" className="hover:text-foreground transition">
+                About
+              </a>
+            </li>
           </ul>
         </div>
         <div>
@@ -47,17 +63,30 @@ export function Footer() {
           </p>
           <ul className="space-y-1.5 text-muted-foreground font-mono text-xs">
             <li>
-              <a href="https://github.com/priyanshsinghpurawat" target="_blank" rel="noreferrer" className="hover:text-foreground transition">
+              <a
+                href="https://github.com/priyanshsinghpurawat"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground transition"
+              >
                 GitHub ↗
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/priyansh-singh-purawat/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">
+              <a
+                href="https://www.linkedin.com/in/priyansh-singh-purawat/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground transition"
+              >
                 LinkedIn ↗
               </a>
             </li>
             <li>
-              <a href="mailto:priyanshsinghpurawatji@gmail.com" className="hover:text-foreground transition">
+              <a
+                href="mailto:priyanshsinghpurawatji@gmail.com"
+                className="hover:text-foreground transition"
+              >
                 priyanshsinghpurawatji@gmail.com
               </a>
             </li>
@@ -73,9 +102,16 @@ export function Footer() {
             Currently
           </p>
           <ul className="space-y-1.5 text-muted-foreground font-mono text-xs">
-            <li><span className="text-foreground">Building</span> · MERN web products</li>
-            <li><span className="text-foreground">Open to</span> · Full Stack roles, remote or relocation</li>
-            <li><span className="text-foreground">Based in</span> · Jaipur, India</li>
+            <li>
+              <span className="text-foreground">Building</span> · MERN web products
+            </li>
+            <li>
+              <span className="text-foreground">Open to</span> · Full Stack roles, remote or
+              relocation
+            </li>
+            <li>
+              <span className="text-foreground">Based in</span> · Jaipur, India
+            </li>
           </ul>
         </div>
       </div>

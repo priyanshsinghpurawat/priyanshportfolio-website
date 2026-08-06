@@ -27,7 +27,9 @@ export function About() {
               </p>
               <p className="mt-3 text-sm sm:text-base text-foreground/80 leading-relaxed">
                 End-to-end web applications on the MERN stack — from MongoDB schema design and
-                Express RESTful APIs to high-performance React user interfaces. Key production work includes MensVibe (multi-role e-commerce with Razorpay and Redis) and JobDekho (HRMS job portal with JWT auth and Cloudinary).
+                Express RESTful APIs to high-performance React user interfaces. Key production work
+                includes MensVibe (multi-role e-commerce with Razorpay and Redis) and JobDekho (HRMS
+                job portal with JWT auth and Cloudinary).
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm">
@@ -35,7 +37,9 @@ export function About() {
                 How I work
               </p>
               <p className="mt-3 text-sm sm:text-base text-foreground/80 leading-relaxed">
-                Model domain data cleanly first, build typed and versioned RESTful surfaces, then craft intuitive interfaces. Validate inputs with Zod, enforce strict role-based access (RBAC) with JWT, and keep read paths fast with read-through caching.
+                Model domain data cleanly first, build typed and versioned RESTful surfaces, then
+                craft intuitive interfaces. Validate inputs with Zod, enforce strict role-based
+                access (RBAC) with JWT, and keep read paths fast with read-through caching.
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm">
@@ -43,7 +47,9 @@ export function About() {
                 What I'm looking for
               </p>
               <p className="mt-3 text-sm sm:text-base text-foreground/80 leading-relaxed">
-                Full Stack, Software Engineer, or Backend roles in fast-moving engineering teams where I can take ownership of features, solve real business problems, and push clean code to production.
+                Full Stack, Software Engineer, or Backend roles in fast-moving engineering teams
+                where I can take ownership of features, solve real business problems, and push clean
+                code to production.
               </p>
             </div>
           </div>
@@ -52,4 +58,3 @@ export function About() {
     </section>
   );
 }
-

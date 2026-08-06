@@ -30,12 +30,15 @@ function ProjectsPage() {
       <Header />
       <main className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-16 sm:py-24">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-medium">Portfolio</p>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-brand font-medium">
+            Portfolio
+          </p>
           <h1 className="mt-2 font-display text-4xl sm:text-6xl font-bold tracking-tight text-foreground">
             All Projects & Systems.
           </h1>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">
-            Full-stack MERN applications, production case studies, and engineering utilities built with problem-driven focus.
+            Full-stack MERN applications, production case studies, and engineering utilities built
+            with problem-driven focus.
           </p>
         </Reveal>
 

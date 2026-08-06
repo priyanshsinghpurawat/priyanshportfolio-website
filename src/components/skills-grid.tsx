@@ -55,7 +55,10 @@ const backend: Skill[] = [
 function Chip({ Icon, name }: Skill) {
   return (
     <li className="group flex items-center gap-2.5 rounded-lg border border-border bg-card/60 px-3.5 py-2.5 transition-colors hover:border-foreground/30">
-      <Icon className="size-4 text-muted-foreground group-hover:text-foreground transition-colors" aria-hidden="true" />
+      <Icon
+        className="size-4 text-muted-foreground group-hover:text-foreground transition-colors"
+        aria-hidden="true"
+      />
       <span className="font-mono text-xs text-foreground">{name}</span>
     </li>
   );
@@ -114,4 +117,3 @@ export function SkillsGrid() {
     </section>
   );
 }
-
